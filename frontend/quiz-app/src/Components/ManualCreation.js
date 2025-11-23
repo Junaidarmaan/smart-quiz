@@ -3,12 +3,19 @@ import { InputLabel, labelId, FormControl, TextField, Select, MenuItem } from '@
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
+import SendIcon from '@mui/icons-material/Send';
 import { DeleteForeverOutlined } from '@mui/icons-material';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 
+
 export default function ManualCreation() {
+    const [questionId, setQuestionId] = React.useState(1);
     const [questions, setQuestions] = React.useState([]);
-    const [currentQuestion, setCurrentQuestion] = React.useState();
+    const [schedule, setSchedule] = React.useState({
+        date: null,
+        time: null
+    });
+    const [currentQuestion, setCurrentQuestion] = React.useState({});
     return (
         <div>
             <Box
@@ -16,43 +23,64 @@ export default function ManualCreation() {
                 display="flex"
                 gap={2}
             >
-                <TextField variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, question: e.target.value })} size='small' label="enter the question" required/>
-                <TextField variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionA: e.target.value })} size='small' label="Enter the option A" />
-                <TextField variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionB: e.target.value })} size='small' label="Enter the option B" />
-                <TextField variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionC: e.target.value })} size='small' label="Enter the option C" />
-                <TextField variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionD: e.target.value })} size='small' label="Enter the option D" />
+                <TextField value={currentQuestion.question || ""} variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, question: e.target.value })} size='small' label="enter the question" required />
+                <TextField value={currentQuestion.optionA || ""} variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionA: e.target.value })} size='small' label="Enter the option A" />
+                <TextField value={currentQuestion.optionB || ""} variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionB: e.target.value })} size='small' label="Enter the option B" />
+                <TextField value={currentQuestion.optionC || ""} variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionC: e.target.value })} size='small' label="Enter the option C" />
+                <TextField value={currentQuestion.optionD || ""} variant='outlined' onChange={(e) => setCurrentQuestion({ ...currentQuestion, optionD: e.target.value })} size='small' label="Enter the option D" />
                 <FormControl >
                     <InputLabel id="Correct_Answer">Correct Answer</InputLabel>
-                    < Select 
-                    size='small' sx={{width:"200px"}}
-                    labelId="Correct_Answer"  
-                    onChange={(e) => setCurrentQuestion({ ...currentQuestion, correctOption: e.target.value })}
-                    label="Correct Answer"
+                    < Select
+                        size='small' sx={{ width: "200px" }}
+                        labelId="Correct_Answer"
+                        onChange={(e) => setCurrentQuestion({ ...currentQuestion, correctOption: e.target.value })}
+                        label="Correct Answer"
+                        value={currentQuestion.correctOption || ''}
                     >
                         <MenuItem value="A">A</MenuItem>
                         <MenuItem value="B">B</MenuItem>
                         <MenuItem value="C">C</MenuItem>
                         <MenuItem value="D">D</MenuItem>
                     </Select>
-                    </FormControl>
-                    <Button variant='contained' onClick={() => { setQuestions([...questions, currentQuestion]) }} endIcon={<AddIcon />}>Add</Button>
+                </FormControl>
+
+                <Button
+                    variant='contained'
+                    color='secondary'
+                    endIcon={<AddIcon />}
+                    onClick={
+                        () => {
+                            const questionWithId = { ...currentQuestion, id: questionId };
+                            setQuestions([...questions, questionWithId]);
+                            setQuestionId(questionId + 1);
+                            setCurrentQuestion({});
+                        }
+                    }
+                >Add</Button>
+
+
+
             </Box>
 
             <TableContainer >
-                <Table >    
+                <Table >
                     <TableHead>
-                        <TableCell>Question</TableCell>
-                        <TableCell>Option A</TableCell>
-                        <TableCell>Option B</TableCell>
-                        <TableCell>Option C</TableCell>
-                        <TableCell>Option D</TableCell>
-                        <TableCell>Correct Option</TableCell>
-                        <TableCell>Actions</TableCell>
+                        <TableRow>
+                            <TableCell>Id</TableCell>
+                            <TableCell>Question</TableCell>
+                            <TableCell>Option A</TableCell>
+                            <TableCell>Option B</TableCell>
+                            <TableCell>Option C</TableCell>
+                            <TableCell>Option D</TableCell>
+                            <TableCell>Correct Option</TableCell>
+                            <TableCell>Actions</TableCell>
+                        </TableRow>
                     </TableHead>
                     <TableBody>
                         {
-                            questions.map((q) => (
-                                <TableRow>
+                            questions.map((q, index) => (
+                                <TableRow key={index}>
+                                    <TableCell>{q.id}</TableCell>
                                     <TableCell>{q.question}</TableCell>
                                     <TableCell>{q.optionA}</TableCell>
                                     <TableCell>{q.optionB}</TableCell>
@@ -60,11 +88,15 @@ export default function ManualCreation() {
                                     <TableCell>{q.optionD}</TableCell>
                                     <TableCell>{q.correctOption}</TableCell>
                                     <TableCell>
-                                            <Button variant='outlined' 
-                                            color='error' 
-                                            endIcon={<DeleteForeverOutlined />} 
-                                            onClick={()=> setQuestions(questions.filter((el)=>q.question !== el.question))}
-                                            >Delete</Button>
+                                        <Button variant='outlined'
+                                            color='error'
+                                            endIcon={<DeleteForeverOutlined />}
+                                            onClick={
+                                                () => {
+                                                    setQuestions(questions.filter(el => q.id !== el.id));
+                                                }
+                                            }
+                                        >Delete</Button>
                                     </TableCell>
                                 </TableRow>
                             ))
@@ -73,6 +105,96 @@ export default function ManualCreation() {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+
+            <FormControl
+                fullWidth
+                sx={{
+                    marginTop: 10,
+                    padding: "20px 5px",
+                }}
+            >
+                <InputLabel size='large' shrink>Select Schedule</InputLabel>
+
+                <Box
+                    display="flex"
+                    gap={2}
+                >
+
+                    <TextField
+                        type='date'
+                        variant='outlined'
+                        label="Select Schedule Date"
+                        // InputLabelProps={{ shrink: true }} -- old way
+                        slotProps={{
+
+                            inputLabel: {
+                                shrink: true
+                            }
+                        }
+                        }
+                        onChange={(e) => {
+                            setSchedule({ ...schedule, date: e.target.value });
+                        }}
+                        required
+                    />
+
+                    <TextField
+                        type='time'
+                        variant='outlined'
+                        label="Select Schedule time"
+                        // InputLabelProps={{ shrink: true }} -- old way
+                        slotProps={{
+
+                            inputLabel: {
+                                shrink: true
+                            }
+                        }
+                        }
+                        onChange={(e) => {
+                            setSchedule({ ...schedule, time: e.target.value });
+                        }}
+                        required
+                    />
+
+                    <Button
+                        variant='contained'
+                        color='primary'
+                        endIcon={<SendIcon />}
+                        onClick={
+                            () => {
+                                console.log(questions);
+                                const response = scheduleQuizRequest({
+                                    questions: questions,
+                                    schedule: schedule
+                                });
+                                alert("Quiz Scheduled Successfully! check the upcoming quizzes section.");
+                            }
+                        }
+                    >Submit Quiz</Button>
+                </Box>
+            </FormControl>
+        </div >
     )
+}
+
+function scheduleQuizRequest(data) {
+    const url = null;
+    if (url == null) {
+        console.error("API endpoint URL is not defined.");
+        return "backemd API endpoint URL is not defined.";
+    } else {
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                return data;
+            })
+
+    }
 }
