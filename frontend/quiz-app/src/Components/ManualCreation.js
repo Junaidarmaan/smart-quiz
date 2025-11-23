@@ -60,11 +60,14 @@ export default function ManualCreation() {
                                     <TableCell>{q.optionD}</TableCell>
                                     <TableCell>{q.correctOption}</TableCell>
                                     <TableCell>
-                                        <Button variant='outlined' color='error' endIcon={<DeleteForeverOutlined />}>Delete</Button>
+                                            <Button variant='outlined' 
+                                            color='error' 
+                                            endIcon={<DeleteForeverOutlined />} 
+                                            onClick={()=> setQuestions(questions.filter((el)=>q.question !== el.question))}
+                                            >Delete</Button>
                                     </TableCell>
                                 </TableRow>
                             ))
-
 
                         }
                     </TableBody>
