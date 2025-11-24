@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React, { use } from 'react'
 import { useState, useEffect } from 'react'
-import {Table,TableBody,TableCell,TableContainer,TableHead,TableRow} from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 export default function UpcomingQuizzes() {
     const [quizzes, setQuizzes] = useState([]);
     useEffect(() => {
@@ -11,6 +11,7 @@ export default function UpcomingQuizzes() {
             .then(res => res.json())
             .then((data) => {
                 setQuizzes(data.data);
+                console.log(data);
             }
             );
     }, []);
@@ -22,22 +23,20 @@ export default function UpcomingQuizzes() {
                         <TableRow>
                             <TableCell>S.NO</TableCell>
                             <TableCell>schedule</TableCell>
-                            <Tablecell>duration(in minutes)</Tablecell>
+                            <TableCell>duration(in minutes)</TableCell>
                         </TableRow>
-                        <TableBody>
-                            {
-                                quizzes.map((quiz,index)=>{
-                                    return(
-                                    <TableRow key={index}>
-                                        <TableCell>{quiz.id}</TableCell>
-                                        <TableCell>{quiz.schedule}</TableCell>
-                                        <TableCell>{quiz.duration}</TableCell>
-                                    </TableRow>
-                                    )
-                                })
-                            }
-                        </TableBody>
                     </TableHead>
+                    <TableBody>
+                        {
+                            quizzes.map((quiz, index) => (
+                                <TableRow key={index}>
+                                    <TableCell>{quiz.quizId}</TableCell>
+                                    <TableCell>{quiz.schedule.dateTime}</TableCell>
+                                    <TableCell>{quiz.schedule.duration}</TableCell>
+                                </TableRow>
+                            ))
+                        }
+                    </TableBody>
                 </Table>
             </TableContainer>
 
