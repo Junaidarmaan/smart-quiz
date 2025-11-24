@@ -24,9 +24,11 @@ export default function Home() {
         </div>
 
         <div className="card">
-          <h2>My Quizzes</h2>
-          <p>View quizzes you created, their results, and stats.</p>
-          <button>View</button>
+          <h2>Upcoming Quizes</h2>
+          <p>View quizzes which are upcoming</p>
+          <button 
+          onClick={()=>navigate("/upcomingQuizzes")}
+          >View</button>
         </div>
 
         <div className="card">

@@ -32,6 +32,11 @@ public class HomeController {
         return quizService.getAllQuizzes();
     }
 
+    @GetMapping("/getUpcomingQuizzes")
+    public ResponseEntity<Map<String,Object>> getUpcomingQuizzes(){
+        return quizService.getUpcomingQuizzes();
+    }
+
 
 
 

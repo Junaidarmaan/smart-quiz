@@ -46,10 +46,12 @@ public class QuizService {
         return quizRepo.findAll();
     }
 
-    // public ResponseEntity<List<Quiz>> getUpcomingQuizzes(){
-    //     LocalDate today = LocalDate.now(ZoneId.of("asia/kolkata"));
-    //     LocalTime now = LocalTime.now(ZoneId.of("asia/kolkata"));
-    //     // List<Quiz> quizzes = quizRepo.findAllUpcomingQuizzes(today, now);
-    //     return ResponseEntity.status(HttpStatus.OK).body(quizzes);
-    // }
+    public ResponseEntity<Map<String,Object>> getUpcomingQuizzes(){
+        LocalDateTime today = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
+        List<Quiz> upcomingQuizzes = quizRepo.findByScheduleDateTimeAfter(today);
+        Map<String,Object> response = new HashMap<>();
+        response.put("data", upcomingQuizzes);
+        response.put("message", "Upcoming quizzes retrieved successfully");
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
 }
