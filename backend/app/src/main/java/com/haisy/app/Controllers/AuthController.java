@@ -1,33 +1,22 @@
-package com.haisy.app;
+package com.haisy.app.Controllers;
 
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Model.User;
 import com.haisy.app.Services.UserService;
 
-import java.util.Map;
-
-@CrossOrigin(origins = "http://localhost:3000")
-@RestController
-public class HomeController {
+@CrossOrigin(origins = "*")
+@RequestMapping("/auth")
+public class AuthController {
     @Autowired
-    UserService userService;
-    
-
-    @PostMapping("/createQuiz")
-    public ResponseEntity<String> createQuiz(@RequestBody QuizRequestDTO quiz){
-        System.out.println(quiz.toString());
-        return ResponseEntity.status(HttpStatus.OK).body("successfully created " + quiz.toString());
-    }
-        
+    private UserService userService;
 
     @PostMapping("/signup")
     public ResponseEntity<Map<String,Object>> signup(@RequestBody User user){

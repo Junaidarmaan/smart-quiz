@@ -2,7 +2,9 @@ package com.haisy.app.DTO;
 
 import java.util.List;
 
+
 public class QuizRequestDTO {
+
     List<QuizQuestions> questions;
     QuizSchedule schedule;
     public List<QuizQuestions> getQuestions() {

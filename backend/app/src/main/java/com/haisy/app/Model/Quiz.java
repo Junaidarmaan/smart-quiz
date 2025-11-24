@@ -1,63 +1,54 @@
 package com.haisy.app.Model;
 
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-    String topic;
-    boolean isManual = false;
-    String questionAndAnswers;
+    Integer quizId;
     
-    
-    @Override
-    public String toString() {
-        return "Quiz [id=" + id + ", isManual=" + isManual + ", questionAndAnswers=" + questionAndAnswers + "]";
+    @OneToMany(mappedBy = "quiz" ,cascade = CascadeType.ALL)
+    @JsonManagedReference
+    List<Question> questions;
+
+    @Embedded
+    Schedule schedule;
+
+    public Integer getQuizId() {
+        return quizId;
     }
 
-
-    public Integer getId() {
-        return id;
+    public void setQuizId(Integer quizId) {
+        this.quizId = quizId;
     }
 
-
-    public void setId(Integer id) {
-        this.id = id;
+    public List<Question> getQuestions() {
+        return questions;
     }
 
-
-    public String getTopic() {
-        return topic;
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
     }
 
-
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public Schedule getSchedule() {
+        return schedule;
     }
 
-
-    public boolean isManual() {
-        return isManual;
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
     }
 
-
-    public void setManual(boolean isManual) {
-        this.isManual = isManual;
-    }
-
-
-    public String getQuestionAndAnswers() {
-        return questionAndAnswers;
-    }
-
-
-    public void setQuestionAndAnswers(String questionAndAnswers) {
-        this.questionAndAnswers = questionAndAnswers;
-    }
+   
 }

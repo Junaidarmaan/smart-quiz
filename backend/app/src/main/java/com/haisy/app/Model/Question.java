@@ -1,15 +1,33 @@
-package com.haisy.app.DTO;
+package com.haisy.app.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
-public class QuizQuestions {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
+@Entity
+public class Question {
+    @Id
+    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    int id;
     String question;
     String optionA;
     String optionB;
     String optionC;
     String optionD;
     String correctOption;
-    
+    @ManyToOne
+    @JsonBackReference
+    private Quiz quiz;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getQuestion() {
         return question;
     }
@@ -46,10 +64,10 @@ public class QuizQuestions {
     public void setCorrectOption(String correctOption) {
         this.correctOption = correctOption;
     }
-    @Override
-    public String toString() {
-        return "QuizQuestions [ question=" + question + ", optionA=" + optionA + ", optionB=" + optionB
-                + ", optionC=" + optionC + ", optionD=" + optionD + ", correctOption=" + correctOption + "]";
+    public Quiz getQuiz() {
+        return quiz;
     }
-
-}   
+    public void setQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+}

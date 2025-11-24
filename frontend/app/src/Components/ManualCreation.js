@@ -177,7 +177,7 @@ export default function ManualCreation() {
 }
 
 function scheduleQuizRequest(data) {
-    const url = "http://localhost:8080/createQuiz";
+    const url = "https://smart-quiz-xmzm.onrender.com/createQuiz";
     if (url == null) {
         console.error("API endpoint URL is not defined.");
         return "backemd API endpoint URL is not defined.";
