@@ -161,13 +161,12 @@ export default function ManualCreation() {
                         color='primary'
                         endIcon={<SendIcon />}
                         onClick={
-                            () => {
-                                console.log(questions);
+                            () => { 
                                 const response = scheduleQuizRequest({
                                     questions: questions,
                                     schedule: schedule
                                 });
-                                alert("Quiz Scheduled Successfully! check the upcoming quizzes section.");
+                                alert(response);
                             }
                         }
                     >Submit Quiz</Button>
@@ -178,7 +177,7 @@ export default function ManualCreation() {
 }
 
 function scheduleQuizRequest(data) {
-    const url = null;
+    const url = "http://localhost:8080/createQuiz";
     if (url == null) {
         console.error("API endpoint URL is not defined.");
         return "backemd API endpoint URL is not defined.";
@@ -190,7 +189,7 @@ function scheduleQuizRequest(data) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        }).then(response => response.json())
+        }).then(response => response.text())
             .then(data => {
                 console.log('Success:', data);
                 return data;
