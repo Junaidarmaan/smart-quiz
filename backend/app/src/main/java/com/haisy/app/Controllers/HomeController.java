@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Model.Quiz;
+import com.haisy.app.Services.GeminiService;
 import com.haisy.app.Services.QuizService;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public class HomeController {
     @Autowired
     QuizService quizService;
 
+    @Autowired
+    GeminiService gemini;
     @PostMapping("/createQuiz")
     public ResponseEntity<Map<String,String>> createQuiz(@RequestBody QuizRequestDTO quiz){
         return quizService.add(quiz);
@@ -36,6 +39,16 @@ public class HomeController {
     public ResponseEntity<Map<String,Object>> getUpcomingQuizzes(){
         return quizService.getUpcomingQuizzes();
     }
+
+    @PostMapping("/gemini")
+    public String generateQuestions(@RequestBody Map<String,Object> obj){
+        String topic = (String)obj.get("topic");
+        int quantity = (int)obj.get("quantity");
+        int difficulty = (int)obj.get("difficulty");
+        
+        return gemini.generateQuestions(topic,quantity,difficulty);
+
+    } 
 
 
 
