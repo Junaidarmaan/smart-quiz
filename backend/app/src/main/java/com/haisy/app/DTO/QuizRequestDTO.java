@@ -7,6 +7,7 @@ public class QuizRequestDTO {
 
     List<QuizQuestions> questions;
     QuizSchedule schedule;
+    String joinCode;
     public List<QuizQuestions> getQuestions() {
         return questions;
     }
@@ -22,5 +23,11 @@ public class QuizRequestDTO {
     @Override
     public String toString() {
         return "QuizRequestDTO [questions=" + questions + ", schedule=" + schedule + "]";
+    }
+    public String getJoinCode() {
+        return joinCode;
+    }
+    public void setJoinCode(String joinCode) {
+        this.joinCode = joinCode;
     }
 }

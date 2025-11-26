@@ -13,4 +13,6 @@ public interface QuizRepo extends JpaRepository<Quiz,Integer>{
 
     // this is for getting upcoming quizzes it says like in the quiz there is schedule object in that object there dateTime field
     List<Quiz> findByScheduleDateTimeAfter(LocalDateTime dateTime);
+    Boolean existsByJoinCode(String code);
+    Quiz findByJoinCode(String code);
 }

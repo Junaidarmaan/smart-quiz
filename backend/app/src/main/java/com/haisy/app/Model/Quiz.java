@@ -19,6 +19,7 @@ public class Quiz {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer quizId;
     
+    String joinCode;
     @OneToMany(mappedBy = "quiz" ,cascade = CascadeType.ALL)
     @JsonManagedReference
     List<Question> questions;
@@ -48,6 +49,14 @@ public class Quiz {
 
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
+    }
+
+    public String getJoinCode() {
+        return joinCode;
+    }
+
+    public void setJoinCode(String joinCode) {
+        this.joinCode = joinCode;
     }
 
    

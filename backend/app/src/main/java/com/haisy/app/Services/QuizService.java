@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +33,8 @@ public class QuizService {
             q.setQuiz(quiz);
         });
 
-        //checking if the date and time is valid IE it must be in the ner future never be the past
         LocalDateTime today = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
+        //checking if the date and time is valid IE it must be in the ner future never be the past
         if(quiz.getSchedule().getDateTime().isBefore(today)){
                 response.put("data", "Quiz date and time must be in the future");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
@@ -53,5 +54,47 @@ public class QuizService {
         response.put("data", upcomingQuizzes);
         response.put("message", "Upcoming quizzes retrieved successfully");
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    public boolean isCodeExist(String code){
+        return quizRepo.existsByJoinCode(code);
+    }
+
+    public ResponseEntity<Map<String,Object>> handleQuizJoin(String code){
+        boolean isValidCode = isCodeExist(code);
+        Map<String,Object> map = new HashMap<>();
+
+        if(!isValidCode){
+            map.put("action",false);
+            map.put("message", "the provided code is invalid please check again ");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(map);
+        }
+        Quiz quiz = quizRepo.findByJoinCode(code);
+        
+
+        int duration = quiz.getSchedule().getDuration();
+        LocalDateTime start = quiz.getSchedule().getDateTime();
+        LocalDateTime end = start.plusMinutes(duration);
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
+        boolean flag = (now.isAfter(start) || now.isEqual(start)) && (now.isBefore(end) || (now.isEqual(end)));
+        if(flag){
+            map.put("action",true);
+            map.put("message","you can join the quiz you arrived at valid Schedule");
+        }else{
+            map.put("action",false);
+            map.put("start",start);
+            map.put("end",end);
+            if(now.isBefore(start)){
+                map.put("message","isEarly");
+                return ResponseEntity.status(HttpStatus.TOO_EARLY).body(map);
+            }else{
+                map.put("message","isLate");
+                return ResponseEntity.status(HttpStatus.TOO_EARLY).body(map);
+
+            }
+
+        }
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(map);
+        
     }
 }
