@@ -1,8 +1,7 @@
-import { Box, Button, Card, dividerClasses, TextField } from '@mui/material'
+import {  Button, Card, TextField } from '@mui/material'
 import React, { useState } from 'react'
-import SendIcon from '@mui/icons-material/Send';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import { Stack, Paper } from '@mui/material';
+import { Stack } from '@mui/material';
 
 
 export default function AutoCreation() {
@@ -49,7 +48,7 @@ export default function AutoCreation() {
                                 }).then(response=>{
                                     response.json();
                                 }).then(res=>{
-                                    console.log(res)
+                                    console.log(data)
                                 })
                             }
                         }

@@ -1,5 +1,4 @@
 import { Box } from '@mui/material';
-import React, { use } from 'react'
 import { useState, useEffect } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 export default function UpcomingQuizzes() {
@@ -22,6 +21,7 @@ export default function UpcomingQuizzes() {
                     <TableHead>
                         <TableRow>
                             <TableCell>S.NO</TableCell>
+                            <TableCell>Join code</TableCell>
                             <TableCell>schedule</TableCell>
                             <TableCell>duration(in minutes)</TableCell>
                         </TableRow>
@@ -31,6 +31,7 @@ export default function UpcomingQuizzes() {
                             quizzes.map((quiz, index) => (
                                 <TableRow key={index}>
                                     <TableCell>{quiz.quizId}</TableCell>
+                                    <TableCell>{quiz.joinCode}</TableCell>
                                     <TableCell>{quiz.schedule.dateTime}</TableCell>
                                     <TableCell>{quiz.schedule.duration}</TableCell>
                                 </TableRow>
