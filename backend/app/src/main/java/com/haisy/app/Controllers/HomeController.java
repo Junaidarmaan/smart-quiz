@@ -48,9 +48,9 @@ public class HomeController {
 
     @PostMapping("/gemini")
     public String generateQuestions(@RequestBody Map<String,Object> obj){
-        String topic = (String)obj.get("topic");
-        int quantity = (int)obj.get("quantity");
-        int difficulty = (int)obj.get("difficulty");
+        String topic = obj.get("topic").toString();
+        int quantity = Integer.parseInt(obj.get("quantity").toString());
+        int difficulty = Integer.parseInt(obj.get("difficulty").toString());
         
         return gemini.generateQuestions(topic,quantity,difficulty);
 
