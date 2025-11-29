@@ -8,7 +8,7 @@ import { DeleteForeverOutlined } from '@mui/icons-material';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from "@mui/material/CircularProgress";
-
+import {Skeleton} from '@mui/material';
 
 export default function ManualCreation() {
     const [joinCode, setJoinCode] = useState("");
@@ -235,7 +235,12 @@ export default function ManualCreation() {
             <Backdrop
                 open={requestLoading}
             >
-                <CircularProgress />
+                {/* <CircularProgress /> */}
+                <Skeleton
+                variant='rectangular'
+                width={300}
+                heigth={200}
+                />
 
             </Backdrop> 
         </div >

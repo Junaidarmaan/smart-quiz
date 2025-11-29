@@ -10,13 +10,13 @@ export default function PlayQuiz() {
         fetch(url,{
           method:"POST"
         }).then(pack=>
-          pack.json()).
-          then(data=>{
+          pack.json())
+          .then(data=>{
             console.log(data)
             setResponse(data)
           }
           )
-    },[])
+    },[code])
   return (
     <Box
     display={"flex"}
