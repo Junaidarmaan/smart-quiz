@@ -20,7 +20,9 @@ export default function Home() {
         <div className="card">
           <h2>Join Quiz</h2>
           <p>Enter a quiz code to join a live or scheduled quiz.</p>
-          <button>Join</button>
+          <button
+          onClick={()=>navigate("/join")}
+          >Join</button>
         </div>
 
         <div className="card">

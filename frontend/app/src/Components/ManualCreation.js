@@ -8,7 +8,6 @@ import { DeleteForeverOutlined } from '@mui/icons-material';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from "@mui/material/CircularProgress";
-import {Card} from '@mui/material';
 
 
 export default function ManualCreation() {
@@ -175,7 +174,7 @@ export default function ManualCreation() {
                         }}
                         onChange={(e) => {
                             setSchedule({ ...schedule, duration: e.target.value })
-                        }} iq
+                        }} 
 
 
                     />
