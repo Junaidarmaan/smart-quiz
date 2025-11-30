@@ -1,4 +1,4 @@
-import { Button, Card, collapseClasses, TextField } from '@mui/material'
+import { Button, Card, TextField } from '@mui/material'
 import { Box } from '@mui/material';
 import React, { useState } from 'react'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
@@ -7,6 +7,7 @@ import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow } from
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
 import Skeleton from '@mui/material/Skeleton';
+import './LoaderAnimation.css'
 
 
 export default function AutoCreation() {
@@ -22,7 +23,7 @@ export default function AutoCreation() {
     const [received, setReceived] = useState(false)
     const [response, setResponse] = useState([])
     const [loading, setLoading] = useState(false)
-    const [joinCode,setJoinCode] = useState("")
+    const [joinCode, setJoinCode] = useState("")
     return (
         <div
             style={divStyle}
@@ -39,32 +40,7 @@ export default function AutoCreation() {
                 <TextField onChange={(e) => setData({ ...data, "quantity": e.target.value })} variant='outlined' placeholder='number  of questions' label="Quantity" required />
                 <TextField onChange={(e) => setData({ ...data, "difficulty": e.target.value })} variant='outlined' placeholder='1 = easy | 10 = hard' label="Difficulty" required />
 
-                <Button
-                    variant='contained'
-                    color='primary'
-                    endIcon={<AutoAwesomeIcon />}
-                    onClick={
-                        () => {
-                            setReceived(false)
-                            const url = "https://smart-quiz-xmzm.onrender.com/gemini"
-                            setLoading(true)
-                            fetch(url, {
-                                method: "POST",
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(data)
-                            }).then(pack => {
-                                return pack.json();
 
-                            }).then(obj => {
-                                console.log(obj)
-                                setReceived(true)
-                                setResponse(obj)
-                            }).finally(() => setLoading(false))
-                        }
-                    }
-                >generate</Button>
                 <TextField type='time'
                     variant='outlined'
                     label='time'
@@ -97,6 +73,32 @@ export default function AutoCreation() {
                         setSchedule({ ...schedule, duration: e.target.value })
                     }}
                 />
+                <Button
+                    variant='contained'
+                    color='primary'
+                    endIcon={<AutoAwesomeIcon />}
+                    onClick={
+                        () => {
+                            setReceived(false)
+                            const url = "https://smart-quiz-xmzm.onrender.com/gemini"
+                            setLoading(true)
+                            fetch(url, {
+                                method: "POST",
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(data)
+                            }).then(pack => {
+                                return pack.json();
+
+                            }).then(obj => {
+                                console.log(obj)
+                                setReceived(true)
+                                setResponse(obj)
+                            }).finally(() => setLoading(false))
+                        }
+                    }
+                >generate</Button>
             </Box>
             {received &&
 
@@ -146,7 +148,7 @@ export default function AutoCreation() {
                         variant='outlined'
                         label='quiz id'
                         placeholder='will be used to join quiz'
-                        
+
                         onChange={(e) => {
                             setJoinCode(e.target.value)
                         }}
@@ -155,8 +157,10 @@ export default function AutoCreation() {
                         variant='contained'
                         color='primary'
                         onClick={() => {
+                            setLoading(true)
                             const url = "https://smart-quiz-xmzm.onrender.com/createQuiz";
                             const request = {
+
                                 questions: response,
                                 schedule: schedule,
                                 joinCode: joinCode
@@ -174,7 +178,7 @@ export default function AutoCreation() {
                                     return result
                                 }).catch(err => {
                                     console.log("error ocured : ", err)
-                                })
+                                }).finally(()=>setLoading(false))
 
 
                         }}
@@ -185,8 +189,7 @@ export default function AutoCreation() {
             <Backdrop
                 open={loading}
             >
-                <CircularProgress />
-
+                <span class="loader"></span>
             </Backdrop>
         </div>
     )
