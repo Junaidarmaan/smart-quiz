@@ -12,7 +12,8 @@ import com.haisy.app.Model.Question;
 import com.haisy.app.Model.Quiz;
 import com.haisy.app.Model.Schedule;
 
-@Mapper(componentModel = "spring")
+
+@Mapper(componentModel = "spring") // this line becuase to tell spring create its bean at start in simple to create intsace in IOC
 public interface QuizDtoMapper {
     @Mapping(target="quizId", ignore=true)
     Quiz toQuizEntity(QuizRequestDTO dto);

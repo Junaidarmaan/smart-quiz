@@ -26,6 +26,8 @@ public class HomeController {
 
     @Autowired
     GeminiService gemini;
+
+    
     @PostMapping("/createQuiz")
     public ResponseEntity<Map<String,String>> createQuiz(@RequestBody QuizRequestDTO quiz){
         return quizService.add(quiz);

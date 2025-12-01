@@ -15,4 +15,5 @@ public interface QuizRepo extends JpaRepository<Quiz,Integer>{
     List<Quiz> findByScheduleDateTimeAfter(LocalDateTime dateTime);
     Boolean existsByJoinCode(String code);
     Quiz findByJoinCode(String code);
+    
 }

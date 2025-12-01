@@ -96,4 +96,15 @@ public class QuizService {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(map);
         
     }
+
+    public boolean isCorrect(Map<String,Object> map){
+        String question = map.get("question").toString();
+        int id = Integer.parseInt(map.get("id").toString());
+        String quizId = map.get("joinCode").toString();
+        String correctoption = map.get("correctOption").toString();
+        Quiz q = quizRepo.findByJoinCode(quizId);
+        // List<quizQuestions> qs = q.getQuestions();
+        boolean result = false;
+        return result;
+    }
 }
