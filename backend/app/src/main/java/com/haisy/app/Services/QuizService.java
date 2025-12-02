@@ -26,6 +26,11 @@ public class QuizService {
     public ResponseEntity<Map<String,String>> add(QuizRequestDTO dto){
         Quiz quiz = mapper.toQuizEntity(dto);
         Map<String,String> response = new HashMap<>();
+        String receivedCode = quiz.getJoinCode();
+        if(quizRepo.existsByJoinCode(receivedCode)){
+            response.put("message", "entered joinCode already in use please choose another");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+        }
         response.put("data", "Quiz created successfully check upcoming quizzes to verify");
         //for foreign key if you remove it the schdule ie date time beomes null and cant map to the questions table
         quiz.getQuestions().forEach((q)->{
