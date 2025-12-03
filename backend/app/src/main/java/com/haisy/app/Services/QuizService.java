@@ -13,8 +13,9 @@ import org.springframework.stereotype.Service;
 
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Mappers.QuizDtoMapper;
+import com.haisy.app.Model.Question;
 import com.haisy.app.Model.Quiz;
-import com.haisy.app.Repository.QuizRepo;
+import com.haisy.app.Repository.*;
 
 @Service
 public class QuizService {
@@ -22,6 +23,8 @@ public class QuizService {
     private QuizRepo quizRepo;
     @Autowired
     private QuizDtoMapper mapper;
+    @Autowired
+    private QuestionsRepository questionRepo;
 
     public ResponseEntity<Map<String, String>> add(QuizRequestDTO dto) {
         Quiz quiz = mapper.toQuizEntity(dto);
@@ -95,13 +98,13 @@ public class QuizService {
     }
 
     public boolean isCorrect(Map<String, Object> map) {
-        String question = map.get("question").toString();
+        
         int id = Integer.parseInt(map.get("id").toString());
-        String quizId = map.get("joinCode").toString();
+        int quizId = Integer.parseInt(map.get("joinCode").toString());
         String correctoption = map.get("correctOption").toString();
-        Quiz q = quizRepo.findByJoinCode(quizId);
-        // List<quizQuestions> qs = q.getQuestions();
-        boolean result = false;
+        Question q = questionRepo.findByIdAndQuizId(id, quizId);
+        
+        boolean result = q.getCorrectOption().equals(correctoption);
         return result;
     }
 }

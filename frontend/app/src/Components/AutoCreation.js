@@ -44,6 +44,9 @@ export default function AutoCreation() {
                 <TextField type='time'
                     variant='outlined'
                     label='time'
+                    sx={{
+                        width:200
+                    }}
                     slotProps={{
                         inputLabel: {
                             shrink: true

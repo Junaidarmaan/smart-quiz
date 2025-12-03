@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Container, Button, Paper, Typography, Divider } from "@mui/material";
 
 export default function Question({ data, onNext, flag }) {
+    const [selectedOption, setSelectedOption] = React.useState(null);
+    const [btnColor,setBtnColor] = React.useState("primary");
     return (
         <>
             {flag && <h1>quiz is over u can leave</h1>}
@@ -60,6 +62,10 @@ export default function Question({ data, onNext, flag }) {
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
+                                    onClick={(e)=>{
+                                        setSelectedOption(data.optionA)
+                                    }}
+                                    color ={selectedOption===data.optionA?"success":btnColor}
                                 >
                                     {data.optionA}
                                 </Button>
@@ -72,6 +78,11 @@ export default function Question({ data, onNext, flag }) {
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
+                                    onClick={(e)=>{
+                                        setSelectedOption(data.optionB)
+                                    }}
+                                    color ={selectedOption===data.optionB?"success":btnColor}
+
                                 >
                                     {data.optionB}
                                 </Button>
@@ -84,6 +95,11 @@ export default function Question({ data, onNext, flag }) {
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
+                                    onClick={(e)=>{
+                                        setSelectedOption(data.optionC)
+                                    }}
+                                    color ={selectedOption===data.optionC?"success":btnColor}
+
                                 >
                                     {data.optionC}
                                 </Button>
@@ -96,6 +112,12 @@ export default function Question({ data, onNext, flag }) {
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
+                                    onClick={(e)=>{
+                                        setSelectedOption(data.optionD)
+
+                                    }}
+                                    color ={selectedOption===data.optionD?"success":btnColor}
+
                                 >
                                     {data.optionD}
                                 </Button>
@@ -111,7 +133,15 @@ export default function Question({ data, onNext, flag }) {
                                     fontSize: "1.05rem",
                                     textTransform: "none"
                                 }}
-                                onClick={onNext}
+                                onClick={()=>{
+                                    if(selectedOption===null){
+                                        setBtnColor("error")
+                                    }else{
+                                        onNext()
+                                        setSelectedOption(null)
+                                        setBtnColor("primary")
+                                    }
+                                }}
                             >
                                 Next
                             </Button>

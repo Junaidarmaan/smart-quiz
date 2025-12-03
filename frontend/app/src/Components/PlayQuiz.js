@@ -36,7 +36,7 @@ export default function PlayQuiz() {
           <Question data={response.data.questions[curQuestion]} 
             onNext={()=>{
               let n = response.data.questions.length;
-              if(curQuestion == n-1){
+              if(curQuestion === n-1){
                 setFinished(true)
               }else{
                 setCurQuestion(curQuestion+1)
