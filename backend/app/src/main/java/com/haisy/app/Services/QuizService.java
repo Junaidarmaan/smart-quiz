@@ -102,7 +102,7 @@ public class QuizService {
         int id = Integer.parseInt(map.get("id").toString());
         int quizId = Integer.parseInt(map.get("joinCode").toString());
         String correctoption = map.get("correctOption").toString();
-        Question q = questionRepo.findByIdAndQuizId(id, quizId);
+        Question q = questionRepo.findByIdAndQuizQuizId(id, quizId);
         
         boolean result = q.getCorrectOption().equals(correctoption);
         return result;
