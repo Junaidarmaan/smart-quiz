@@ -7,5 +7,5 @@ import com.haisy.app.Model.Question;
 
 @Repository
 public interface QuestionsRepository extends JpaRepository<Question,Integer> {
-    Question findByIdAndQuizId(int id, int quizId);
+    Question findByIdAndQuizQuizId(int id, int quizId);
 }
