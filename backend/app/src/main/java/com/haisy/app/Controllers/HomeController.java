@@ -59,7 +59,7 @@ public class HomeController {
 
     } 
     @PostMapping("/isCorrect")
-    public boolean isCorrect(Map<String,Object> request){
+    public boolean isCorrect(@RequestBody Map<String,Object> request){
         return quizService.isCorrect(request);
     }
 
