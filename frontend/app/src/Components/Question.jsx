@@ -1,12 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import Backdrop from '@mui/material/Backdrop';
+import './LoaderAnimation.css';
 import { Box, Container, Button, Paper, Typography, Divider } from "@mui/material";
 
-export default function Question({ data, onNext, flag,isCorrect }) {
-    const [selectedOption, setSelectedOption] = React.useState(null);
-    const [btnColor,setBtnColor] = React.useState("primary");
+export default function Question({ data, onNext, flag, isCorrect }) {
+    const [errorOption, setErrorOption] = useState()
+    const [correctOpt, setCorrectOpt] = useState(null)
+    const [loading,setLoading] = useState(false)
+    const [correct,setCorrect] = useState(0)
+    const [effect,setEffet] = useState("")
+
+    const handleOptionClick = async (cur) => {
+        setLoading(true)
+        const result = await isCorrect(cur)
+        if (result) {
+            setCorrectOpt(cur)
+            setEffet("correct")
+            setCorrect(correct+1)
+        } else {
+            setErrorOption(cur)
+            setEffet("wrong")
+        }
+        
+        setTimeout(() => {
+            setCorrectOpt(null)
+            setErrorOption(null)
+            onNext()
+            setLoading(false)
+            setEffet("")
+        }, 500)
+
+    }
     return (
         <>
-            {flag && <h1>quiz is over u can leave</h1>}
+            {flag && <h1>quiz is over. your score is {correct}</h1>}
             {!flag &&
                 <Box
                     sx={{
@@ -14,11 +41,18 @@ export default function Question({ data, onNext, flag,isCorrect }) {
                         width: "100%",
                         display: "flex",
                         background: "linear-gradient(to right, #ece9e6, #ffffff)",
-                        padding: 2,
+                        padding: 5,
                         boxSizing: "border-box"
                     }}
                 >
                     {/* Center Main Quiz */}
+                    <Button
+                    variant="contained"
+                    color="secondary"
+                    sx={{
+                        height:100
+                    }}
+                    >SCORE : {correct}</Button>
                     <Box
                         sx={{
                             flex: 1,
@@ -55,97 +89,73 @@ export default function Question({ data, onNext, flag,isCorrect }) {
                             {/* Options */}
                             <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
                                 <Button
-                                    variant="outlined"
+                                    variant="contained"
                                     sx={{
                                         paddingY: 2,
                                         borderRadius: 3,
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
-                                    onClick={(e)=>{
-                                        setSelectedOption(data.optionA)
-                                    }}
-                                    color ={selectedOption===data.optionA?"success":btnColor}
+                                    color={correctOpt === "A" ? "success" : errorOption === "A" ? "error" : "primary"}
+                                    onClick={() => handleOptionClick("A")}
                                 >
                                     {data.optionA}
                                 </Button>
 
                                 <Button
-                                    variant="outlined"
+                                    variant="contained"
                                     sx={{
                                         paddingY: 2,
                                         borderRadius: 3,
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
-                                    onClick={(e)=>{
-                                        setSelectedOption(data.optionB)
-                                    }}
-                                    color ={selectedOption===data.optionB?"success":btnColor}
+                                    color={correctOpt === "B" ? "success" : errorOption === "B" ? "error" : "primary"}
+
+                                    onClick={() => handleOptionClick("B")}
+
 
                                 >
                                     {data.optionB}
                                 </Button>
 
                                 <Button
-                                    variant="outlined"
+                                    variant="contained"
                                     sx={{
                                         paddingY: 2,
                                         borderRadius: 3,
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
-                                    onClick={(e)=>{
-                                        setSelectedOption(data.optionC)
-                                    }}
-                                    color ={selectedOption===data.optionC?"success":btnColor}
+                                    color={correctOpt === "C" ? "success" : errorOption === "C" ? "error" : "primary"}
+
+
+                                    onClick={() => handleOptionClick("C")}
+
 
                                 >
                                     {data.optionC}
                                 </Button>
 
                                 <Button
-                                    variant="outlined"
+                                    variant="contained"
                                     sx={{
                                         paddingY: 2,
                                         borderRadius: 3,
                                         textTransform: "none",
                                         fontSize: "1rem"
                                     }}
-                                    onClick={(e)=>{
-                                        setSelectedOption(data.optionD)
+                                    color={correctOpt === "D" ? "success" : errorOption === "D" ? "error" : "primary"}
 
-                                    }}
-                                    color ={selectedOption===data.optionD?"success":btnColor}
+
+                                    onClick={() => handleOptionClick("D")}
+
 
                                 >
                                     {data.optionD}
                                 </Button>
                             </Box>
 
-                            {/* Next Button */}
-                            <Button
-                                variant="contained"
-                                fullWidth
-                                sx={{
-                                    paddingY: 1.8,
-                                    borderRadius: 3,
-                                    fontSize: "1.05rem",
-                                    textTransform: "none"
-                                }}
-                                onClick={()=>{
-                                    if(selectedOption===null){
-                                        setBtnColor("error")
-                                    }else{
-                                        onNext()
-                                        setSelectedOption(null)
-                                        setBtnColor("primary")
-                                    }
-                                    isCorrect(selectedOption)
-                                }}
-                            >
-                                Next
-                            </Button>
                         </Container>
                     </Box>
 
@@ -224,6 +234,13 @@ export default function Question({ data, onNext, flag,isCorrect }) {
                     </Box>
                 </Box>
             }
+            <Backdrop
+                open={loading}
+                
+            >
+                <span className={effect}></span>
+            </Backdrop>
         </>
     );
 }
+

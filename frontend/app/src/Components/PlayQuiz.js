@@ -50,7 +50,7 @@ export default function PlayQuiz() {
                 "selectedOption":optChoosen
               }
               console.log(req)
-              fetch(url,{
+              return fetch(url,{
                 method:'POST',
                 headers:{
                   'Content-Type' : 'application/json'
@@ -59,6 +59,7 @@ export default function PlayQuiz() {
               }).then(pack=>pack.json())
               .then(res=>{
                 console.log(res);
+                return res;
               })
 
             }
