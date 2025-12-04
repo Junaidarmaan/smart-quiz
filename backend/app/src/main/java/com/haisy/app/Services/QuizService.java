@@ -99,12 +99,12 @@ public class QuizService {
 
     public boolean isCorrect(Map<String, Object> map) {
         
-        int id = Integer.parseInt(map.get("id").toString());
-        int quizId = Integer.parseInt(map.get("joinCode").toString());
-        String correctoption = map.get("correctOption").toString();
-        Question q = questionRepo.findByIdAndQuizQuizId(id, quizId);
+        int questionId = Integer.parseInt(map.get("questionId").toString());
+        int quizId = Integer.parseInt(map.get("quizId").toString());
+        String selectedoption = map.get("selectedOption").toString();
+        Question q = questionRepo.findByIdAndQuizQuizId(questionId, quizId);
         
-        boolean result = q.getCorrectOption().equals(correctoption);
+        boolean result = q.getCorrectOption().equals(selectedoption);
         return result;
     }
 }

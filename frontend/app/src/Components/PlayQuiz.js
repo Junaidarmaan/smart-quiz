@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Card } from '@mui/material';
+import { Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { Container } from '@mui/material';
-import { Button } from '@mui/material';
 import Question from './Question';
 
 export default function PlayQuiz() {
   const { code } = useParams()
   const [response, setResponse] = useState({})
-  const [requestStatus,setRequestStatus] = useState(false)
-  const [curQuestion,setCurQuestion] = useState(0);
-  const [finished,setFinished] = useState(false)
+  const [requestStatus, setRequestStatus] = useState(false)
+  const [curQuestion, setCurQuestion] = useState(0);
+  const [finished, setFinished] = useState(false)
   useEffect(() => {
     const url = `https://smart-quiz-xmzm.onrender.com/joinQuiz/${code}`;
     fetch(url, {
@@ -33,17 +31,39 @@ export default function PlayQuiz() {
       alignItems={"center"}
     >
       {requestStatus &&
-          <Question data={response.data.questions[curQuestion]} 
-            onNext={()=>{
-              let n = response.data.questions.length;
-              if(curQuestion === n-1){
-                setFinished(true)
-              }else{
-                setCurQuestion(curQuestion+1)
+        <Question data={response.data.questions[curQuestion]}
+          onNext={() => {
+            let n = response.data.questions.length;
+            if (curQuestion === n - 1) {
+              setFinished(true)
+            } else {
+              setCurQuestion(curQuestion + 1)
+            }
+          }}
+          flag={finished}
+          isCorrect={
+            (optChoosen) => {
+              const url = `https://smart-quiz-xmzm.onrender.com/isCorrect`;
+              const req = {
+                "quizId" : response.data.quizId,
+                "questionId" : response.data.questions[curQuestion].id,
+                "selectedOption":optChoosen
               }
-            }}          
-            flag = {finished}
-          />
+              console.log(req)
+              fetch(url,{
+                method:'POST',
+                headers:{
+                  'Content-Type' : 'application/json'
+                },
+                body : JSON.stringify(req)
+              }).then(pack=>pack.json())
+              .then(res=>{
+                console.log(res);
+              })
+
+            }
+          }
+        />
       }
     </Box>
   )

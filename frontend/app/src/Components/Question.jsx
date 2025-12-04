@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Button, Paper, Typography, Divider } from "@mui/material";
 
-export default function Question({ data, onNext, flag }) {
+export default function Question({ data, onNext, flag,isCorrect }) {
     const [selectedOption, setSelectedOption] = React.useState(null);
     const [btnColor,setBtnColor] = React.useState("primary");
     return (
@@ -141,6 +141,7 @@ export default function Question({ data, onNext, flag }) {
                                         setSelectedOption(null)
                                         setBtnColor("primary")
                                     }
+                                    isCorrect(selectedOption)
                                 }}
                             >
                                 Next
