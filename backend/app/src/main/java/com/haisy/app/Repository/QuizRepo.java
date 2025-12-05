@@ -16,4 +16,5 @@ public interface QuizRepo extends JpaRepository<Quiz,Integer>{
     Boolean existsByJoinCode(String code);
     Quiz findByJoinCode(String code);
     
+    
 }

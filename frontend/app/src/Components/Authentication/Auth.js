@@ -25,7 +25,7 @@ export default function Auth({ data }) {
 
   function validateSignUp() {
     console.log(userForm);
-    fetch("http://localhost:8080/signup", {
+    fetch("https://smart-quiz-xmzm.onrender.com/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

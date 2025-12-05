@@ -39,6 +39,7 @@
   color: #555;
 }
 
+
 .card button {
   padding: 8px 14px;
   border: none;
@@ -50,4 +51,27 @@
 
 .card button:hover {
   background-color: #3952d1;
+}
+
+
+.card-error {
+  border: 1px solid #ff4d4d;
+  border-radius: 8px;
+  animation: pulseGlow 1.4s ease-in-out infinite;
+}
+.user{
+  z-index: 2000;
+
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 77, 77, 0.0);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(255, 77, 77, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 77, 77, 0.0);
+  }
 }
