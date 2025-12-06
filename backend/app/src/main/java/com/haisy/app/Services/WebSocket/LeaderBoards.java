@@ -9,36 +9,38 @@ import org.springframework.stereotype.Service;
 public class LeaderBoards {
     ConcurrentHashMap<String,Board> map = new ConcurrentHashMap<>();
   
-    public String adduser(UserProfile user){
+    public void adduser(UserProfile user){
         if(map.containsKey(user.getQuizId())){
             Board b = map.get(user.getQuizId());
             b.addNewUser(user); 
-            return "already added in previous queue";
+            System.out.println("already added in previous queue");
+            return;
         }else{
+
             Board b = new Board();
             b.addNewUser(user);
             map.put(user.getQuizId(), b);
         }
-        return "added new quiz then added";
+        System.out.println("added in the new queue");
     }
     public List<UserProfile> getRankings(String quizId){
         if(map.containsKey(quizId)){
             return map.get(quizId).getRankings();
         }
+        System.out.println("rankings are null");
         return null;
     }
-    public String increaseScore(UserProfile user){
+    public void increaseScore(UserProfile user){
         if(map.containsKey(user.getQuizId())){
             map.get(user.getQuizId()).increaseScore(user.getUserName(), 1);
-            return "added score successfully";
+            System.out.println("Added score successfully");
+            return;
         }
-        return "invalid quiz id";
+            System.out.println("invalid quiz id");
     }
-    public String decreaseScore(UserProfile user){
+    public void decreaseScore(UserProfile user){
         if(map.containsKey(user.getQuizId())){
             map.get(user.getQuizId()).decreaseScore(user.getUserName(), 1);
-            return "decreased score successfully";
         }
-        return "invalid quiz id";
     }
 }

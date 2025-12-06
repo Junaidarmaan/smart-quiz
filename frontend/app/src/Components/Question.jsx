@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Backdrop from '@mui/material/Backdrop';
 import './LoaderAnimation.css';
-import { Box, Container, Button, Paper, Typography, Divider } from "@mui/material";
+import { Box, Container, Button,Typography } from "@mui/material";
 import Live from "./Live";
 export default function Question({ data, onNext, flag, isCorrect, quizId}) {
     const [errorOption, setErrorOption] = useState()
@@ -22,7 +22,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId}) {
                 score: 0
             }
             Live.send("/app/updateScore",profile)
-            
+            Live.send(`/app/getRankings/${quizId}`)
         } else {
             setErrorOption(cur)
             setEffet("wrong")

@@ -32,7 +32,7 @@ public class WebSocketController {
     @MessageMapping("getRankings/{quizId}")
     public void getRankings(@DestinationVariable String quizId){
         List<UserProfile> result = leaderBoard.getRankings(quizId);
-        template.convertAndSend(quizId, result, null, null);
+        template.convertAndSend("/topic/quiz/rankings/"+quizId, result);
     }
 
 }
