@@ -29,20 +29,26 @@ export default function PlayQuiz() {
   }, [code])
 
   useEffect(() => {
-    Live.connect()
-    console.log("connected now subscibing to quiz")
-    Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
-      console.log("from broker" + msg)
-      setRankings(JSON.parse(msg.body))
-    })
-    const profile = {
-      userName: sessionStorage.getItem("userName"),
-      quizId: code,
-      score: 0
-    }
-    Live.send('/app/joinQuiz',profile)
-    console.log("sent the following data to joinUser " + JSON.stringify(profile))
-  }, [code, response, requestStatus])
+    Live.connect(() => {
+      console.log("connected now subscribing to quiz");
+
+      Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
+        console.log("from broker", msg);
+        setRankings(msg);
+      });
+
+      const profile = {
+        userName: sessionStorage.getItem("userName"),
+        quizId: code,
+        score: 0
+      };
+
+      Live.send('/app/joinQuiz', profile);
+      console.log("sent data to joinUser", profile);
+    });
+
+  }, [code,requestStatus]);
+
   return (
     <Box
       display={"flex"}

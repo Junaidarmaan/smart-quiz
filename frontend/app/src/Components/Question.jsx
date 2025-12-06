@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Backdrop from '@mui/material/Backdrop';
 import './LoaderAnimation.css';
-import { Box, Container, Button,Typography } from "@mui/material";
+import { Box, Container, Button, Typography } from "@mui/material";
 import Live from "./Live";
-export default function Question({ data, onNext, flag, isCorrect, quizId}) {
+export default function Question({ data, onNext, flag, isCorrect, quizId }) {
     const [errorOption, setErrorOption] = useState()
     const [correctOpt, setCorrectOpt] = useState(null)
     const [loading, setLoading] = useState(false)
@@ -19,11 +19,14 @@ export default function Question({ data, onNext, flag, isCorrect, quizId}) {
             const profile = {
                 userName: sessionStorage.getItem("userName"),
                 quizId: quizId,
-                score: 0
+                score: correct
             }
             console.log("sent request to increae score")
-            Live.send("/app/updateScore",profile)
-            Live.send(`/app/getRankings/${quizId}`)
+            Live.send("/app/updateScore", profile)
+            setTimeout(() => {
+                Live.send(`/app/getRankings/${quizId}`)
+            }, 50)
+
         } else {
             setErrorOption(cur)
             setEffet("wrong")
@@ -167,7 +170,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId}) {
                     </Box>
 
                     {/* Right Side Leaderboard */}
-                    
+
                 </Box>
             }
             <Backdrop
