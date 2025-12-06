@@ -21,6 +21,7 @@ public class WebSocketController {
     
     @MessageMapping("/joinQuiz")
     public void joinQuiz(UserProfile user){
+        System.out.println("at entry of joinQuiz contoller the quizid is " + user.getQuizId());
         leaderBoard.adduser(user);
     }
 

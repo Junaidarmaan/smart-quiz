@@ -13,6 +13,7 @@ public class LeaderBoards {
         return map.containsKey(id);
     }
     public void adduser(UserProfile user){
+        System.out.println("at entry of leaderboard servce the quizid is " + user.getQuizId());
         if(map.containsKey(user.getQuizId())){
             Board b = map.get(user.getQuizId());
             b.addNewUser(user); 
