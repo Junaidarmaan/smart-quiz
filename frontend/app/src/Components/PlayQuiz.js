@@ -40,7 +40,7 @@ export default function PlayQuiz() {
       quizId: code,
       score: 0
     }
-    Live.send('/app/joinQuiz/',profile)
+    Live.send('/app/joinQuiz',profile)
     console.log("sent the following data to joinUser " + JSON.stringify(profile))
   }, [code, response, requestStatus])
   return (
