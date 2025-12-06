@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 public class LeaderBoards {
     ConcurrentHashMap<String,Board> map = new ConcurrentHashMap<>();
   
+    public boolean isValidQuizId(String id){
+        return map.containsKey(id);
+    }
     public void adduser(UserProfile user){
         if(map.containsKey(user.getQuizId())){
             Board b = map.get(user.getQuizId());

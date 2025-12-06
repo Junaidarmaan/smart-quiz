@@ -14,6 +14,7 @@ import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Model.Quiz;
 import com.haisy.app.Services.GeminiService;
 import com.haisy.app.Services.QuizService;
+import com.haisy.app.Services.WebSocket.LeaderBoards;
 
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,13 @@ public class HomeController {
     @Autowired
     GeminiService gemini;
 
+    @Autowired
+    LeaderBoards lb;
+
+    @PostMapping("/isValid/{id}")
+    public boolean isValidQuiz(@PathVariable String id ){
+        return lb.isValidQuizId(id);
+    }
     
     @PostMapping("/createQuiz")
     public ResponseEntity<Map<String,String>> createQuiz(@RequestBody QuizRequestDTO quiz){

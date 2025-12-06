@@ -31,8 +31,9 @@ export default function PlayQuiz() {
   useEffect(() => {
     Live.connect()
     console.log("connected now subscibing to quiz")
-    Live.subscribe(`/topic/quiz/${code}`, (msg) => {
-      console.log(msg)
+    Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
+      console.log("from broker" + msg)
+      setRankings(JSON.parse(msg.body))
     })
     const profile = {
       userName: sessionStorage.getItem("userName"),
@@ -40,7 +41,7 @@ export default function PlayQuiz() {
       score: 0
     }
     Live.send('/app/joinQuiz/',profile)
-    console.log("sent the following data to joinUser " + profile)
+    console.log("sent the following data to joinUser " + JSON.stringify(profile))
   }, [code, response, requestStatus])
   return (
     <Box

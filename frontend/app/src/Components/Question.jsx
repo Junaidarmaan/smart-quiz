@@ -21,6 +21,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId}) {
                 quizId: quizId,
                 score: 0
             }
+            console.log("sent request to increae score")
             Live.send("/app/updateScore",profile)
             Live.send(`/app/getRankings/${quizId}`)
         } else {
