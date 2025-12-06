@@ -12,7 +12,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry){
-        registry.addEndpoint("/server").setAllowedOrigins("https://smart-quiz-xmzm.onrender.com").withSockJS();
+        registry.addEndpoint("/server").setAllowedOrigins("https://ominous-disco-w6grj7qxw6xcjpx-3000.app.github.dev").withSockJS();
     }
 
     @Override
