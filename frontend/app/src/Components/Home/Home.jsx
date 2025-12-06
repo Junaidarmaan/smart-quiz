@@ -9,8 +9,8 @@ export default function Home() {
   const navigate = useNavigate()
   const [isDisabled, setIsDisabled] = useState(true)
   const [userButton, setUserButton] = useState("edit")
-  const [userName, setusername] = useState(null)
-  const [blocked,setBlocked] = useState(true)
+  const [userName, setusername] = useState(sessionStorage.getItem("userName"))
+  const [blocked,setBlocked] = useState(sessionStorage.getItem("userName")==null?true:false)
   return (
     <div className="home-container">
 

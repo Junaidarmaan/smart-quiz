@@ -2,26 +2,32 @@ import React, { useState } from "react";
 import Backdrop from '@mui/material/Backdrop';
 import './LoaderAnimation.css';
 import { Box, Container, Button, Paper, Typography, Divider } from "@mui/material";
-
-export default function Question({ data, onNext, flag, isCorrect }) {
+import Live from "./Live";
+export default function Question({ data, onNext, flag, isCorrect, quizId}) {
     const [errorOption, setErrorOption] = useState()
     const [correctOpt, setCorrectOpt] = useState(null)
-    const [loading,setLoading] = useState(false)
-    const [correct,setCorrect] = useState(0)
-    const [effect,setEffet] = useState("")
-
+    const [loading, setLoading] = useState(false)
+    const [correct, setCorrect] = useState(0)
+    const [effect, setEffet] = useState("")
     const handleOptionClick = async (cur) => {
         setLoading(true)
         const result = await isCorrect(cur)
         if (result) {
             setCorrectOpt(cur)
             setEffet("correct")
-            setCorrect(correct+1)
+            setCorrect(correct + 1)
+            const profile = {
+                userName: sessionStorage.getItem("userName"),
+                quizId: quizId,
+                score: 0
+            }
+            Live.send("/app/updateScore",profile)
+            
         } else {
             setErrorOption(cur)
             setEffet("wrong")
         }
-        
+
         setTimeout(() => {
             setCorrectOpt(null)
             setErrorOption(null)
@@ -47,11 +53,11 @@ export default function Question({ data, onNext, flag, isCorrect }) {
                 >
                     {/* Center Main Quiz */}
                     <Button
-                    variant="contained"
-                    color="secondary"
-                    sx={{
-                        height:100
-                    }}
+                        variant="contained"
+                        color="secondary"
+                        sx={{
+                            height: 100
+                        }}
                     >SCORE : {correct}</Button>
                     <Box
                         sx={{
@@ -160,83 +166,12 @@ export default function Question({ data, onNext, flag, isCorrect }) {
                     </Box>
 
                     {/* Right Side Leaderboard */}
-                    <Box
-                        sx={{
-                            width: "260px",
-                            paddingLeft: 2,
-                            display: "flex",
-                            alignItems: "stretch"
-                        }}
-                    >
-                        <Paper
-                            elevation={6}
-                            sx={{
-                                width: "100%",
-                                borderRadius: 3,
-                                padding: 2,
-                                backgroundColor: "#fff",
-                                display: "flex",
-                                flexDirection: "column",
-                                height: "96vh",
-                                overflowY: "auto"
-                            }}
-                        >
-                            <Typography
-                                variant="h6"
-                                sx={{
-                                    fontWeight: 700,
-                                    textAlign: "center",
-                                    marginBottom: 1
-                                }}
-                            >
-                                Leaderboard
-                            </Typography>
-
-                            <Divider sx={{ marginBottom: 2 }} />
-
-                            {/* Your dynamic users will be inserted here */}
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                                <Paper
-                                    sx={{
-                                        padding: 1.5,
-                                        borderRadius: 2,
-                                        backgroundColor: "#f7f7f7",
-                                        boxShadow: 1
-                                    }}
-                                >
-                                    <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                                        #1 Username
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ opacity: 0.6 }}>
-                                        Points / whatever
-                                    </Typography>
-                                </Paper>
-
-                                <Paper
-                                    sx={{
-                                        padding: 1.5,
-                                        borderRadius: 2,
-                                        backgroundColor: "#f7f7f7",
-                                        boxShadow: 1
-                                    }}
-                                >
-                                    <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                                        #2 Username
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ opacity: 0.6 }}>
-                                        Points / whatever
-                                    </Typography>
-                                </Paper>
-
-                                {/* You will dynamically map your list here */}
-                            </Box>
-                        </Paper>
-                    </Box>
+                    
                 </Box>
             }
             <Backdrop
                 open={loading}
-                
+
             >
                 <span className={effect}></span>
             </Backdrop>

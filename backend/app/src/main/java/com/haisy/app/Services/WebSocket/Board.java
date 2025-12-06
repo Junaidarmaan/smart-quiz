@@ -20,6 +20,7 @@ public class Board {
         userprofiles.sort(Comparator.comparingInt(UserProfile::getScore).reversed());
     }
     public List<UserProfile> getRankings(){
+        updateTheRankings();
         return  userprofiles;
     }
     public void increaseScore(String userName,int inc){
