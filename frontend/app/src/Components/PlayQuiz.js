@@ -28,7 +28,7 @@ export default function PlayQuiz() {
       }
       )
 
-  }, [code])
+  },[])
 
   useEffect(() => {
     Live.connect(() => {
@@ -146,6 +146,7 @@ export default function PlayQuiz() {
                     backgroundColor: "#f7f7f7",
                     boxShadow: 1
                   }}
+                  key={index}
                 >
                   <Typography variant="body1" sx={{ fontWeight: 600 }}>
                     {el.userName}

@@ -23,20 +23,14 @@ public class Board {
         updateTheRankings();
         return  userprofiles;
     }
-    public void increaseScore(String userName,int inc){
+    public void updateScore(String userName,int inc){
         for(UserProfile u : userprofiles){
             if(u.getUserName().equals(userName)){
                 u.setScore(u.getScore()+inc);
             }
         }
         updateTheRankings();
+        
     }
-    public void decreaseScore(String userName,int inc){
-        for(UserProfile u : userprofiles){
-            if(u.getUserName().equals(userName)){
-                u.setScore(u.getScore()-inc);
-            }
-        }
-        updateTheRankings();
-    }
+    
 }

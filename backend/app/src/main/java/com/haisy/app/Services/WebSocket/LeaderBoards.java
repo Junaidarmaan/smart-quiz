@@ -34,17 +34,13 @@ public class LeaderBoards {
         System.out.println("rankings are null");
         return null;
     }
-    public void increaseScore(UserProfile user){
+    public void updateScore(UserProfile user){
         if(map.containsKey(user.getQuizId())){
-            map.get(user.getQuizId()).increaseScore(user.getUserName(), 1);
+            map.get(user.getQuizId()).updateScore(user.getUserName(), user.getScore());
             System.out.println("Added score successfully");
             return;
         }
             System.out.println("invalid quiz id");
     }
-    public void decreaseScore(UserProfile user){
-        if(map.containsKey(user.getQuizId())){
-            map.get(user.getQuizId()).decreaseScore(user.getUserName(), 1);
-        }
-    }
+    
 }

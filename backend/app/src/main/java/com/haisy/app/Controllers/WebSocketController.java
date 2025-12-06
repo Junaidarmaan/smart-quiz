@@ -27,7 +27,9 @@ public class WebSocketController {
 
     @MessageMapping("/updateScore")
     public void updateScore(UserProfile user){
-        leaderBoard.increaseScore(user);
+        leaderBoard.updateScore(user);
+        List<UserProfile> result = leaderBoard.getRankings(user.getQuizId());
+        template.convertAndSend("/topic/quiz/rankings/"+user.getQuizId(),result);
     }
 
     @MessageMapping("/getRankings/{quizId}")
