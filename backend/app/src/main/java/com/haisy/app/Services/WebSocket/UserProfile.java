@@ -4,10 +4,7 @@ public class UserProfile {
     String userName;
     String quizId;
     int score;
-    public UserProfile(String userName){
-        this.userName = userName;
-        this.score = 0;
-    }
+    public UserProfile(){}
     public String getUserName() {
         return userName;
     }
