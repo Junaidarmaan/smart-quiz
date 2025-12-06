@@ -208,7 +208,7 @@ export default function ManualCreation() {
                                     schedule: schedule,
                                     joinCode: joinCode
                                 }).then(result=>{
-                                    setResponseCard(result.data)
+                                    setResponseCard(result)
                                 }).finally(() => {
                                     setRequestLoading(false)
                                 });
@@ -239,7 +239,7 @@ export default function ManualCreation() {
                 <Skeleton
                 variant='rectangular'
                 width={300}
-                heigth={200}
+                height={200}
                 />
 
             </Backdrop> 
@@ -248,7 +248,8 @@ export default function ManualCreation() {
 }
 
 function scheduleQuizRequest(data) {
-    const url = "https://smart-quiz-xmzm.onrender.com/createQuiz";
+    // const url = "https://smart-quiz-xmzm.onrender.com/createQuiz";
+    const url = "https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/createQuiz"
 
 
     return fetch(url, {

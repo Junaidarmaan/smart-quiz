@@ -7,10 +7,12 @@ function connect(onConnectCallback) {
   if (stompClient && stompClient.connected) {
     return;
   }
-
+  const url = "https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/server"
+  // const url = "https://smart-quiz-xmzm.onrender.com/server";
   stompClient = new Client({
     brokerURL: undefined, // Disable raw websocket for SockJS
-    webSocketFactory: () => new SockJS("https://smart-quiz-xmzm.onrender.com/server"),
+    
+    webSocketFactory: () => new SockJS(url),
 
     reconnectDelay: 5000,
 

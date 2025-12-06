@@ -14,7 +14,9 @@ export default function PlayQuiz() {
   const [rankings, setRankings] = useState([])
   const [finished, setFinished] = useState(false)
   useEffect(() => {
-    const url = `https://smart-quiz-xmzm.onrender.com/joinQuiz/${code}`;
+    // const url = `https://smart-quiz-xmzm.onrender.com/joinQuiz/${code}`;
+    const url = `https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/joinQuiz/${code}`;
+
     fetch(url, {
       method: "POST"
     }).then(pack =>
@@ -71,7 +73,9 @@ export default function PlayQuiz() {
             flag={finished}
             isCorrect={
               (optChoosen) => {
-                const url = `https://smart-quiz-xmzm.onrender.com/isCorrect`;
+                // const url = `https://smart-quiz-xmzm.onrender.com/isCorrect`;
+                const url = "https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/isCorrect"
+
                 const req = {
                   "quizId": response.data.quizId,
                   "questionId": response.data.questions[curQuestion].id,

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.haisy.app.Services.UserService;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*" , allowCredentials = "false")
 @RequestMapping("/auth")
 @RestController
 public class AuthController {
