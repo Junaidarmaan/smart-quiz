@@ -4,6 +4,7 @@ package com.haisy.app.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.haisy.app.Model.Quiz;
 import com.haisy.app.Services.GeminiService;
 import com.haisy.app.Services.QuizService;
 import com.haisy.app.Services.WebSocket.LeaderBoards;
+import com.haisy.app.Services.WebSocket.UserProfile;
 
 import java.util.List;
 import java.util.Map;
@@ -70,6 +72,7 @@ public class HomeController {
     public boolean isCorrect(@RequestBody Map<String,Object> request){
         return quizService.isCorrect(request);
     }
+    
 
 
 

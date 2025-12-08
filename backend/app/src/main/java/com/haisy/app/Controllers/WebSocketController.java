@@ -7,6 +7,7 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.haisy.app.Services.WebSocket.LeaderBoards;
 import com.haisy.app.Services.WebSocket.UserProfile;
@@ -37,5 +38,15 @@ public class WebSocketController {
         List<UserProfile> result = leaderBoard.getRankings(quizId);
         template.convertAndSend("/topic/quiz/rankings/"+quizId, result);
     }
+    @MessageMapping("/removeQuiz")
+    public void removeQuiz(String quizId){
+        leaderBoard.removeQuiz(quizId);
+    }
+    @MessageMapping("/removeUser")
+    public void removeUser(UserProfile user){
+        
+    }
+
+    
 
 }

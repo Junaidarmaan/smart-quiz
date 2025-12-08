@@ -42,5 +42,19 @@ public class LeaderBoards {
         }
             System.out.println("invalid quiz id");
     }
-    
+    public void removeQuiz(String quizId){
+        if(map.contains(quizId)){
+            map.remove(quizId);
+            System.out.println("delted the quiz with quiz id : " +  quizId);
+        }
+        System.out.println("no quiz found with quiz id " + quizId + "so nothing deleted");
+    }
+    public void removeUser(UserProfile user){
+        if(map.contains(user.getQuizId())){
+            map.get(user.getQuizId()).removeUser(user);
+            System.out.println("user removed form quiz success fuly" + user.getQuizId() + " " + user.getUserName());
+            return;
+        }
+        System.out.prinln("quiz id not found to remove the user");
+    }
 }
