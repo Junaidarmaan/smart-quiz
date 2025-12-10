@@ -13,6 +13,7 @@ export default function PlayQuiz() {
   const [curQuestion, setCurQuestion] = useState(0);
   const [rankings, setRankings] = useState([])
   const [finished, setFinished] = useState(false)
+  console.log("code is : ",code)
   useEffect(() => {
     const url = `https://smart-quiz-xmzm.onrender.com/joinQuiz/${code}`;
     // const url = `https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/joinQuiz/${code}`;
@@ -31,6 +32,7 @@ export default function PlayQuiz() {
   },[])
 
   useEffect(() => {
+    sessionStorage.setItem("quizId",code);
     Live.connect(() => {
       console.log("connected now subscribing to quiz");
 
@@ -49,7 +51,7 @@ export default function PlayQuiz() {
       console.log("sent data to joinUser", profile);
     });
 
-  }, [code,requestStatus]);
+  }, []);
 
   return (
     <Box

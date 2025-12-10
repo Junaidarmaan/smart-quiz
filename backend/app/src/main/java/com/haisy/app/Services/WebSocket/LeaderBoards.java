@@ -55,6 +55,6 @@ public class LeaderBoards {
             System.out.println("user removed form quiz success fuly" + user.getQuizId() + " " + user.getUserName());
             return;
         }
-        System.out.prinln("quiz id not found to remove the user");
+        System.out.println("quiz id not found to remove the user");
     }
 }
