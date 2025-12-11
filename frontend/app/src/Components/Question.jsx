@@ -23,9 +23,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId }) {
             }
             console.log("sent request to increae score")
             Live.send("/app/updateScore", profile)
-            setTimeout(() => {
-                Live.send(`/app/getRankings/${quizId}`)
-            }, 50)
+           
 
         } else {
             setErrorOption(cur)

@@ -3,7 +3,8 @@ import { Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import Question from './Question';
 import Live from './Live';
-import { Container, Button, Paper, Typography, Divider } from "@mui/material";
+import { Paper, Typography, Divider } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function PlayQuiz() {
@@ -13,10 +14,29 @@ export default function PlayQuiz() {
   const [curQuestion, setCurQuestion] = useState(0);
   const [rankings, setRankings] = useState([])
   const [finished, setFinished] = useState(false)
-  console.log("code is : ",code)
+  const navigate = useNavigate()
+  console.log("code is : ", code)
+  window.addEventListener('popstate', () => {
+    console.log("u pressesd back");
+    const profile = {
+      userName: sessionStorage.getItem("userName"),
+      quizId: code,
+      score: 0
+    };
+    Live.send(`/app/removeUser`,profile);
+    Live.disconnect()
+  })
+  document.addEventListener('fullscreenchange',()=>{
+    if(!document.fullscreenElement){
+      setFinished(true)
+      setTimeout(()=>{
+        navigate('/')
+
+      },2000)
+    }
+  })
   useEffect(() => {
-    const url = `https://smart-quiz-xmzm.onrender.com/joinQuiz/${code}`;
-    // const url = `https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/joinQuiz/${code}`;
+    const url = `http://localhost:8080/joinQuiz/${code}`;
 
     fetch(url, {
       method: "POST"
@@ -29,10 +49,11 @@ export default function PlayQuiz() {
       }
       )
 
-  },[])
+  }, [])
 
   useEffect(() => {
-    sessionStorage.setItem("quizId",code);
+    sessionStorage.setItem("quizId", code);
+    document.documentElement.requestFullscreen();
     Live.connect(() => {
       console.log("connected now subscribing to quiz");
 
@@ -75,8 +96,7 @@ export default function PlayQuiz() {
             flag={finished}
             isCorrect={
               (optChoosen) => {
-                const url = `https://smart-quiz-xmzm.onrender.com/isCorrect`;
-                // const url = "https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/isCorrect"
+                const url = `http://localhost:8080/isCorrect`;
 
                 const req = {
                   "quizId": response.data.quizId,

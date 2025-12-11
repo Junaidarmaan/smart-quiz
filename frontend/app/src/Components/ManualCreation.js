@@ -249,7 +249,7 @@ export default function ManualCreation() {
 
 function scheduleQuizRequest(data) {
     const url = "https://smart-quiz-xmzm.onrender.com/createQuiz";
-    // const url = "https://ominous-disco-w6grj7qxw6xcjpx-8080.app.github.dev/createQuiz"
+    // const url = "http://localhost:8080/createQuiz"
 
 
     return fetch(url, {

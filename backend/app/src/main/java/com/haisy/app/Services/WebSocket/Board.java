@@ -9,7 +9,9 @@ public class Board {
     List<UserProfile> userprofiles = Collections.synchronizedList(new ArrayList<>());  
 
     public void addNewUser(UserProfile user){
-        userprofiles.add(user);
+        if(!userprofiles.contains(user)){
+            userprofiles.add(user);
+        }
         updateTheRankings();
     }
     public void removeUser(UserProfile user){
@@ -26,7 +28,7 @@ public class Board {
     public void updateScore(String userName,int inc){
         for(UserProfile u : userprofiles){
             if(u.getUserName().equals(userName)){
-                u.setScore(u.getScore()+inc);
+                u.setScore(u.getScore()+1);
             }
         }
         updateTheRankings();

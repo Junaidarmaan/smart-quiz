@@ -24,6 +24,8 @@ public class WebSocketController {
     public void joinQuiz(UserProfile user){
         System.out.println("at entry of joinQuiz contoller the quizid is " + user.getQuizId());
         leaderBoard.adduser(user);
+        List<UserProfile> result = leaderBoard.getRankings(user.getQuizId());
+        template.convertAndSend("/topic/quiz/rankings/"+user.getQuizId(),result);
     }
 
     @MessageMapping("/updateScore")
@@ -36,7 +38,7 @@ public class WebSocketController {
     @MessageMapping("/getRankings/{quizId}")
     public void getRankings(@DestinationVariable String quizId){
         List<UserProfile> result = leaderBoard.getRankings(quizId);
-        template.convertAndSend("/topic/quiz/rankings/"+quizId, result);
+        // template.convertAndSend("/topic/quiz/rankings/"+quizId, result);
     }
     @MessageMapping("/removeQuiz")
     public void removeQuiz(String quizId){
@@ -44,7 +46,7 @@ public class WebSocketController {
     }
     @MessageMapping("/removeUser")
     public void removeUser(UserProfile user){
-        
+        leaderBoard.removeUser(user);
     }
 
     

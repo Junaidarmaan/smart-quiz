@@ -5,7 +5,7 @@ export default function UpcomingQuizzes() {
     const [quizzes, setQuizzes] = useState([]);
     useEffect(() => {
         // Fetch upcoming quizzes from the server or API
-        const url = "https://smart-quiz-xmzm.onrender.com/getUpcomingQuizzes";
+        const url = "http://localhost:8080/getUpcomingQuizzes";
         fetch(url)
             .then(res => res.json())
             .then((data) => {

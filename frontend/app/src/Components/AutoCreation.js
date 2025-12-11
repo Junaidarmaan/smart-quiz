@@ -1,13 +1,11 @@
-import { Button, Card, TextField } from '@mui/material'
+import { Button, TextField } from '@mui/material'
 import { Box } from '@mui/material';
 import React, { useState } from 'react'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import { Stack } from '@mui/material';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
-import Skeleton from '@mui/material/Skeleton';
 import './LoaderAnimation.css'
+
 
 
 export default function AutoCreation() {
@@ -83,7 +81,7 @@ export default function AutoCreation() {
                     onClick={
                         () => {
                             setReceived(false)
-                            const url = "https://smart-quiz-xmzm.onrender.com/gemini"
+                            const url = "http://localhost:8080/gemini"
                             setLoading(true)
                             fetch(url, {
                                 method: "POST",
@@ -161,7 +159,7 @@ export default function AutoCreation() {
                         color='primary'
                         onClick={() => {
                             setLoading(true)
-                            const url = "https://smart-quiz-xmzm.onrender.com/createQuiz";
+                            const url = "http://localhost:8080/createQuiz";
                             const request = {
 
                                 questions: response,

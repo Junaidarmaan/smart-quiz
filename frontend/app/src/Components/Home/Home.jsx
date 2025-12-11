@@ -11,10 +11,7 @@ export default function Home() {
   const [userButton, setUserButton] = useState("edit")
   const [userName, setusername] = useState(sessionStorage.getItem("userName"))
   const [blocked,setBlocked] = useState(sessionStorage.getItem("userName")==null?true:false)
-  // console.log(window.history);
-  window.addEventListener('popstate',()=>{
-    console.log("triggered");
-  })
+  
   return (
     <div className="home-container">
 
