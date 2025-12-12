@@ -4,6 +4,7 @@ public class UserProfile {
     String userName;
     String quizId;
     int score;
+    int curQuestion;
     public UserProfile(){}
     public String getUserName() {
         return userName;
@@ -23,4 +24,12 @@ public class UserProfile {
     public void setQuizId(String quizId) {
         this.quizId = quizId;
     }
+    public int getCurQuestion() {
+        return curQuestion;
+    }
+    public void setCurQuestion(int curQuestion) {
+        this.curQuestion = curQuestion;
+    }
+
+    
 }

@@ -15,7 +15,6 @@ export default function PlayQuiz() {
   const [rankings, setRankings] = useState([])
   const [finished, setFinished] = useState(false)
   const navigate = useNavigate()
-  console.log("code is : ", code)
   window.addEventListener('popstate', () => {
     console.log("u pressesd back");
     const profile = {
@@ -53,7 +52,7 @@ export default function PlayQuiz() {
 
   useEffect(() => {
     sessionStorage.setItem("quizId", code);
-    document.documentElement.requestFullscreen();
+    // document.documentElement.requestFullscreen();
     Live.connect(() => {
       console.log("connected now subscribing to quiz");
 
