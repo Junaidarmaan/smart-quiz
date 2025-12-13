@@ -13,19 +13,17 @@ public class LeaderBoards {
         return map.containsKey(id);
     }
     public void adduser(UserProfile user){
-        System.out.println("at entry of leaderboard servce the quizid is " + user.getQuizId());
         if(map.containsKey(user.getQuizId())){
             Board b = map.get(user.getQuizId());
             b.addNewUser(user); 
-            System.out.println("already added in previous queue");
+            System.out.println("quiz id found in the map");
             return;
         }else{
-
             Board b = new Board();
             b.addNewUser(user);
             map.put(user.getQuizId(), b);
         }
-        System.out.println("added in the new queue");
+        System.out.println("created new quiz");
     }
     public List<UserProfile> getRankings(String quizId){
         if(map.containsKey(quizId)){
@@ -37,11 +35,21 @@ public class LeaderBoards {
     public void updateScore(UserProfile user){
         if(map.containsKey(user.getQuizId())){
             map.get(user.getQuizId()).updateScore(user.getUserName(), user.getScore());
-            System.out.println("Added score successfully");
+            System.out.println("score updated for " +user.getUserName() + " was successfull");
             return;
         }
             System.out.println("invalid quiz id");
     }
+
+    public UserProfile getUserProfileStatus(UserProfile user){
+        if(map.containsKey(user.getQuizId())){
+            Board b = map.get(user.getQuizId());
+            UserProfile u = b.getUser(user.getUserName());
+            return u;
+        }
+        return null;
+    }
+
     public void removeQuiz(String quizId){
         if(map.contains(quizId)){
             map.remove(quizId);

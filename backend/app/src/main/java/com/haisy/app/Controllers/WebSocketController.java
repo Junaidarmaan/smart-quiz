@@ -21,17 +21,18 @@ public class WebSocketController {
     
     @MessageMapping("/joinQuiz")
     public void joinQuiz(UserProfile user){
-        System.out.println("at entry of joinQuiz contoller the quizid is " + user.getQuizId());
         leaderBoard.adduser(user);
         List<UserProfile> result = leaderBoard.getRankings(user.getQuizId());
         template.convertAndSend("/topic/quiz/rankings/"+user.getQuizId(),result);
     }
+    
 
     @MessageMapping("/updateScore")
     public void updateScore(UserProfile user){
         leaderBoard.updateScore(user);
         List<UserProfile> result = leaderBoard.getRankings(user.getQuizId());
         template.convertAndSend("/topic/quiz/rankings/"+user.getQuizId(),result);
+        template.convertAndSend("/topic/quiz/scoreUpdates/"+user.getUserName(),leaderBoard.getUserProfileStatus(user));
     }
 
     @MessageMapping("/getRankings/{quizId}")

@@ -14,24 +14,19 @@ export default function PlayQuiz() {
   const [curQuestion, setCurQuestion] = useState(0);
   const [rankings, setRankings] = useState([])
   const [finished, setFinished] = useState(false)
+  const [score,setScore] = useState(0);
   const navigate = useNavigate()
   window.addEventListener('popstate', () => {
     console.log("u pressesd back");
-    const profile = {
-      userName: sessionStorage.getItem("userName"),
-      quizId: code,
-      score: 0
-    };
-    Live.send(`/app/removeUser`,profile);
     Live.disconnect()
   })
-  document.addEventListener('fullscreenchange',()=>{
-    if(!document.fullscreenElement){
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
       setFinished(true)
-      setTimeout(()=>{
+      setTimeout(() => {
         navigate('/')
 
-      },2000)
+      }, 2000)
     }
   })
   useEffect(() => {
@@ -52,26 +47,58 @@ export default function PlayQuiz() {
 
   useEffect(() => {
     sessionStorage.setItem("quizId", code);
-    // document.documentElement.requestFullscreen();
-    Live.connect(() => {
-      console.log("connected now subscribing to quiz");
-
-      Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
-        console.log("from broker", msg);
-        setRankings(msg);
-      });
-
-      const profile = {
+    if (requestStatus && response.action) {
+      console.log("use effect for live connet triggered");
+      const url = `http://localhost:8080/getCurrentQuestion`;
+      const reqData = {
         userName: sessionStorage.getItem("userName"),
-        quizId: code,
-        score: 0
-      };
+        quizId: sessionStorage.getItem("quizId")
+      }
+      fetch(url, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reqData)
+      }).then(pack =>
+        pack.json())
+        .then(data => {
+          console.log("for current question", data); 
+          let n = response.data.questions.length;
+          if (curQuestion >= n) {
+            setFinished(true)
+          }
+          setCurQuestion(data.curQuestion)
+          
 
-      Live.send('/app/joinQuiz', profile);
-      console.log("sent data to joinUser", profile);
-    });
+          setRequestStatus(true)
+        }
+        )
+      // document.documentElement.requestFullscreen();
+      Live.connect(() => {
+        console.log("connected now subscribing to quiz");
 
-  }, []);
+        Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
+          console.log("from broker", msg);
+          setRankings(msg);
+        });
+        Live.subscribe(`/topic/quiz/scoreUpdates/${sessionStorage.getItem("userName")}`,(msg)=>{
+          console.log("from broker after score update ",msg);
+          setScore(msg.score);
+        })
+
+        const profile = {
+          userName: sessionStorage.getItem("userName"),
+          quizId: code,
+          score: 0
+        };
+
+        Live.send('/app/joinQuiz', profile);
+        console.log("sent data to joinUser", profile);
+      });
+    }
+
+  }, [requestStatus]);
 
   return (
     <Box
@@ -118,6 +145,7 @@ export default function PlayQuiz() {
               }
             }
             quizId={code}
+            score={score}
           />
         </>
       }

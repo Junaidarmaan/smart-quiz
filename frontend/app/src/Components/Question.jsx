@@ -3,11 +3,10 @@ import Backdrop from '@mui/material/Backdrop';
 import './LoaderAnimation.css';
 import { Box, Container, Button, Typography } from "@mui/material";
 import Live from "./Live";
-export default function Question({ data, onNext, flag, isCorrect, quizId }) {
+export default function Question({ data, onNext, flag, isCorrect, quizId,score }) {
     const [errorOption, setErrorOption] = useState()
     const [correctOpt, setCorrectOpt] = useState(null)
     const [loading, setLoading] = useState(false)
-    const [correct, setCorrect] = useState(0)
     const [effect, setEffet] = useState("")
     const handleOptionClick = async (cur) => {
         setLoading(true)
@@ -15,20 +14,18 @@ export default function Question({ data, onNext, flag, isCorrect, quizId }) {
         if (result) {
             setCorrectOpt(cur)
             setEffet("correct")
-            setCorrect(correct + 1)
             const profile = {
                 userName: sessionStorage.getItem("userName"),
                 quizId: quizId,
-                score: correct
             }
             console.log("sent request to increae score")
             Live.send("/app/updateScore", profile)
-           
 
         } else {
             setErrorOption(cur)
             setEffet("wrong")
         }
+
 
         setTimeout(() => {
             setCorrectOpt(null)
@@ -41,7 +38,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId }) {
     }
     return (
         <>
-            {flag && <h1>quiz is over. your score is {correct}</h1>}
+            {flag && <h1>quiz is over. your score is {score}</h1>}
             {!flag &&
                 <Box
                     sx={{
@@ -60,7 +57,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId }) {
                         sx={{
                             height: 100
                         }}
-                    >SCORE : {correct}</Button>
+                    >SCORE : {score}</Button>
                     <Box
                         sx={{
                             flex: 1,
