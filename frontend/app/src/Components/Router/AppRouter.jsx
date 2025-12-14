@@ -7,6 +7,7 @@ import UpcomingQuizzes from '../UpcomingQuizzes'
 import AutoCreation from '../AutoCreation'
 import ManualCreation from '../ManualCreation'
 import PlayQuiz from '../PlayQuiz'
+import Login from '../Authentication/Login'
 import JoinQuiz from '../JoinQuiz'
 export default function AppRouter({data})
 
@@ -14,6 +15,8 @@ export default function AppRouter({data})
   return (
     <Routes>
         <Route path='/signup' element={<Auth data={data}/>}/>
+        <Route path='/login' element={<Login/>}/>
+
         <Route path='/' element={<Home/>}/>
         <Route path='/createQuiz' element={<CreateQuiz/>}/>
         <Route path='/upcomingQuizzes' element={<UpcomingQuizzes/>}/>
