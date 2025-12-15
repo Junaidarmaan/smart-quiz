@@ -14,7 +14,7 @@ export default function PlayQuiz() {
   const [curQuestion, setCurQuestion] = useState(0);
   const [rankings, setRankings] = useState([])
   const [finished, setFinished] = useState(false)
-  const [score,setScore] = useState(0);
+  const [score, setScore] = useState(0);
   const navigate = useNavigate()
   window.addEventListener('popstate', () => {
     console.log("u pressesd back");
@@ -47,6 +47,7 @@ export default function PlayQuiz() {
 
   useEffect(() => {
     sessionStorage.setItem("quizId", code);
+
     if (requestStatus && response.action) {
       console.log("use effect for live connet triggered");
       const url = `http://localhost:8080/getCurrentQuestion`;
@@ -63,13 +64,13 @@ export default function PlayQuiz() {
       }).then(pack =>
         pack.json())
         .then(data => {
-          console.log("for current question", data); 
+          console.log("for current question", data);
           let n = response.data.questions.length;
           if (curQuestion >= n) {
             setFinished(true)
           }
           setCurQuestion(data.curQuestion)
-          
+
 
           setRequestStatus(true)
         }
@@ -82,8 +83,8 @@ export default function PlayQuiz() {
           console.log("from broker", msg);
           setRankings(msg);
         });
-        Live.subscribe(`/topic/quiz/scoreUpdates/${sessionStorage.getItem("userName")}`,(msg)=>{
-          console.log("from broker after score update ",msg);
+        Live.subscribe(`/topic/quiz/scoreUpdates/${sessionStorage.getItem("userName")}`, (msg) => {
+          console.log("from broker after score update ", msg);
           setScore(msg.score);
         })
 
@@ -149,69 +150,71 @@ export default function PlayQuiz() {
           />
         </>
       }
-      <Box
-        sx={{
-          width: "260px",
-          paddingLeft: 2,
-          display: "flex",
-          alignItems: "stretch"
-        }}
-      >
-        <Paper
-          elevation={6}
+      {requestStatus && response.action &&
+        <Box
           sx={{
-            width: "100%",
-            borderRadius: 3,
-            padding: 2,
-            backgroundColor: "#fff",
+            width: "260px",
+            paddingLeft: 2,
             display: "flex",
-            flexDirection: "column",
-            height: "96vh",
-            overflowY: "auto"
+            alignItems: "stretch"
           }}
         >
-          <Typography
-            variant="h6"
+          <Paper
+            elevation={6}
             sx={{
-              fontWeight: 700,
-              textAlign: "center",
-              marginBottom: 1
+              width: "100%",
+              borderRadius: 3,
+              padding: 2,
+              backgroundColor: "#fff",
+              display: "flex",
+              flexDirection: "column",
+              height: "96vh",
+              overflowY: "auto"
             }}
           >
-            Leaderboard
-          </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                fontWeight: 700,
+                textAlign: "center",
+                marginBottom: 1
+              }}
+            >
+              Leaderboard
+            </Typography>
 
-          <Divider sx={{ marginBottom: 2 }} />
+            <Divider sx={{ marginBottom: 2 }} />
 
-          {/* Your dynamic users will be inserted here */}
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            {
-              rankings.map((el, index) => (
+            {/* Your dynamic users will be inserted here */}
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              {
+                rankings.map((el, index) => (
 
-                <Paper
-                  sx={{
-                    padding: 1.5,
-                    borderRadius: 2,
-                    backgroundColor: "#f7f7f7",
-                    boxShadow: 1
-                  }}
-                  key={index}
-                >
-                  <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                    {el.userName}
-                  </Typography>
-                  <Typography variant="body2" sx={{ opacity: 0.6 }}>
-                    {el.score}
-                  </Typography>
-                </Paper>
-              ))
+                  <Paper
+                    sx={{
+                      padding: 1.5,
+                      borderRadius: 2,
+                      backgroundColor: "#f7f7f7",
+                      boxShadow: 1
+                    }}
+                    key={index}
+                  >
+                    <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                      {el.userName}
+                    </Typography>
+                    <Typography variant="body2" sx={{ opacity: 0.6 }}>
+                      {el.score}
+                    </Typography>
+                  </Paper>
+                ))
 
-            }
+              }
 
 
-          </Box>
-        </Paper>
-      </Box>
+            </Box>
+          </Paper>
+        </Box>
+      }
       {requestStatus && !response.action &&
         <h1>{response.message}</h1>
 

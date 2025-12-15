@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.haisy.app.DTO.GoogleUserDto;
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Model.Quiz;
 import com.haisy.app.Services.GeminiService;
+import com.haisy.app.Services.LoginService;
 import com.haisy.app.Services.QuizService;
 import com.haisy.app.Services.WebSocket.LeaderBoards;
 import com.haisy.app.Services.WebSocket.UserProfile;
@@ -31,6 +33,9 @@ public class HomeController {
 
     @Autowired
     LeaderBoards lb;
+
+    @Autowired
+    LoginService loginService;
 
     @PostMapping("/isValid/{id}")
     public boolean isValidQuiz(@PathVariable String id ){
@@ -78,6 +83,16 @@ public class HomeController {
         return lb.getUserProfileStatus(userProfile);   
     }
 
+    @PostMapping("/verifyToken")
+    public ResponseEntity<Map<String, Object>> verifyToken(@RequestBody Map<String, String> request) {
+        String idToken = request.get("idToken");
+        try {
+            GoogleUserDto response =  loginService.verify(idToken);
+            return ResponseEntity.ok(Map.of("status", "success", "data", response));
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body(Map.of("status", "error", "message", e.getMessage()));
+        }
+    }
 
 
 }

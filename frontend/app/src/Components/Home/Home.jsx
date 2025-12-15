@@ -1,17 +1,9 @@
-import React, { useState } from 'react'
 import './Home.css'
 import { useNavigate } from 'react-router-dom';
-import { TextField } from '@mui/material';
-import Backdrop from '@mui/material/Backdrop';
 
 
 export default function Home() {
   const navigate = useNavigate()
-  const [isDisabled, setIsDisabled] = useState(true)
-  const [userButton, setUserButton] = useState("edit")
-  const [userName, setusername] = useState(sessionStorage.getItem("userName"))
-  const [blocked,setBlocked] = useState(sessionStorage.getItem("userName")==null?true:false)
-  
   return (
     <div className="home-container">
 
@@ -41,44 +33,11 @@ export default function Home() {
           >View</button>
         </div>
 
-        <div className={`card user ${userName === null?"card-error":""}`}>
-          <h2>YourUsername</h2>
-          <TextField
-            size='small'
-            value={userName}
-            variant='outlined'
-
-            disabled={isDisabled}
-            onChange={(e) => {
-              setusername(e.target.value)
-            }}
-            sx={{
-              margin: "20px"
-            }}
-          />
-          <button
-            onClick={() => {
-              if (isDisabled) {
-                setIsDisabled(false)
-                setUserButton("submit")
-
-              } else {
-                sessionStorage.setItem("userName",userName);
-                setBlocked(false)
-                setIsDisabled(true)
-                setUserButton("already done")
-              }
-
-            }}
-            disabled = {!blocked}
-          >{userButton}</button>
-        </div>
+        
 
       </div>
 
-      <Backdrop
-      open={blocked}
-      ></Backdrop>
+      
     </div>
   );
 
