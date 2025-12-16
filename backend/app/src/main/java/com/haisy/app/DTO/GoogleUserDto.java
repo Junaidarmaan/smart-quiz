@@ -5,6 +5,7 @@ public class GoogleUserDto {
     String email;
     String name;
     boolean emailVerified;
+    String token;
     public String getGoogleUserId() {
         return googleUserId;
     }
@@ -28,6 +29,12 @@ public class GoogleUserDto {
     }
     public void setEmailVerified(boolean emailVerified) {
         this.emailVerified = emailVerified;
+    }
+    public String getToken() {
+        return token;
+    }
+    public void setToken(String token) {
+        this.token = token;
     }
     
 }
