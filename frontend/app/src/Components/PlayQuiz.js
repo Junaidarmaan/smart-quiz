@@ -152,67 +152,9 @@ export default function PlayQuiz() {
       }
       {requestStatus && response.action &&
         <Box
-          sx={{
-            width: "260px",
-            paddingLeft: 2,
-            display: "flex",
-            alignItems: "stretch"
-          }}
+          
         >
-          <Paper
-            elevation={6}
-            sx={{
-              width: "100%",
-              borderRadius: 3,
-              padding: 2,
-              backgroundColor: "#fff",
-              display: "flex",
-              flexDirection: "column",
-              height: "96vh",
-              overflowY: "auto"
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 700,
-                textAlign: "center",
-                marginBottom: 1
-              }}
-            >
-              Leaderboard
-            </Typography>
-
-            <Divider sx={{ marginBottom: 2 }} />
-
-            {/* Your dynamic users will be inserted here */}
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-              {
-                rankings.map((el, index) => (
-
-                  <Paper
-                    sx={{
-                      padding: 1.5,
-                      borderRadius: 2,
-                      backgroundColor: "#f7f7f7",
-                      boxShadow: 1
-                    }}
-                    key={index}
-                  >
-                    <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                      {el.userName}
-                    </Typography>
-                    <Typography variant="body2" sx={{ opacity: 0.6 }}>
-                      {el.score}
-                    </Typography>
-                  </Paper>
-                ))
-
-              }
-
-
-            </Box>
-          </Paper>
+          
         </Box>
       }
       {requestStatus && !response.action &&

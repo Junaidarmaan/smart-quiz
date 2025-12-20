@@ -29,7 +29,10 @@ export default function AutoCreation() {
             <Box
                 display={"flex"}
                 gap={3}
+                flexWrap={"wrap"}
                 margin={"20px"}
+                justifyContent={"center"}
+                // alignItems={"center"}
             >
 
 

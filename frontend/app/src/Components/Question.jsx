@@ -50,14 +50,7 @@ export default function Question({ data, onNext, flag, isCorrect, quizId,score }
                         boxSizing: "border-box"
                     }}
                 >
-                    {/* Center Main Quiz */}
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        sx={{
-                            height: 100
-                        }}
-                    >SCORE : {score}</Button>
+                   
                     <Box
                         sx={{
                             flex: 1,
