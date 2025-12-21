@@ -1,173 +1,208 @@
 import React, { useState } from "react";
-import Backdrop from '@mui/material/Backdrop';
-import './LoaderAnimation.css';
-import { Box, Container, Button, Typography } from "@mui/material";
-import Live from "./Live";
-export default function Question({ data, onNext, flag, isCorrect, quizId,score }) {
-    const [errorOption, setErrorOption] = useState()
-    const [correctOpt, setCorrectOpt] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [effect, setEffet] = useState("")
-    const handleOptionClick = async (cur) => {
-        setLoading(true)
-        const result = await isCorrect(cur)
-        if (result) {
-            setCorrectOpt(cur)
-            setEffet("correct")
-            const profile = {
-                userName: sessionStorage.getItem("userName"),
-                quizId: quizId,
-            }
-            console.log("sent request to increae score")
-            Live.send("/app/updateScore", profile)
+import {
+  Box,
+  Button,
+  Container,
+  Typography,
+  Backdrop
+} from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CancelIcon from "@mui/icons-material/Cancel";
 
-        } else {
-            setErrorOption(cur)
-            setEffet("wrong")
-        }
+import quizBG from "./assets/quizBG.jpg"; // adjust path if needed
 
+export default function Question({ data, onNext, flag, isCorrect ,curQuestion, totalQuestions,score}) {
+  const [selected, setSelected] = useState(null);
+  const [result, setResult] = useState(null); // "correct" | "wrong"
+  const [loading, setLoading] = useState(false);
 
-        setTimeout(() => {
-            setCorrectOpt(null)
-            setErrorOption(null)
-            onNext()
-            setLoading(false)
-            setEffet("")
-        }, 500)
+  const handleClick = async (option) => {
+    if (loading) return;
 
-    }
+    setSelected(option);
+    setLoading(true);
+
+    const res = await isCorrect(option);
+    setResult(res ? "correct" : "wrong");
+
+    setTimeout(() => {
+      setSelected(null);
+      setResult(null);
+      setLoading(false);
+      onNext();
+    }, 600);
+  };
+
+  if (flag) {
     return (
-        <>
-            {flag && <h1>quiz is over. your score is {score}</h1>}
-            {!flag &&
-                <Box
-                    sx={{
-                        minHeight: "100vh",
-                        width: "100%",
-                        display: "flex",
-                        background: "linear-gradient(to right, #ece9e6, #ffffff)",
-                        padding: 5,
-                        boxSizing: "border-box"
-                    }}
-                >
-                   
-                    <Box
-                        sx={{
-                            flex: 1,
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            padding: 2
-                        }}
-                    >
-                        <Container
-                            maxWidth="sm"
-                            sx={{
-                                padding: 4,
-                                borderRadius: 4,
-                                boxShadow: 5,
-                                backgroundColor: "#fff",
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: 3
-                            }}
-                        >
-                            {/* Question */}
-                            <Typography
-                                variant="h5"
-                                sx={{
-                                    fontWeight: 600,
-                                    textAlign: "center",
-                                    lineHeight: 1.4
-                                }}
-                            >
-                                {data.question}
-                            </Typography>
-
-                            {/* Options */}
-                            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        paddingY: 2,
-                                        borderRadius: 3,
-                                        textTransform: "none",
-                                        fontSize: "1rem"
-                                    }}
-                                    color={correctOpt === "A" ? "success" : errorOption === "A" ? "error" : "primary"}
-                                    onClick={() => handleOptionClick("A")}
-                                >
-                                    {data.optionA}
-                                </Button>
-
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        paddingY: 2,
-                                        borderRadius: 3,
-                                        textTransform: "none",
-                                        fontSize: "1rem"
-                                    }}
-                                    color={correctOpt === "B" ? "success" : errorOption === "B" ? "error" : "primary"}
-
-                                    onClick={() => handleOptionClick("B")}
-
-
-                                >
-                                    {data.optionB}
-                                </Button>
-
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        paddingY: 2,
-                                        borderRadius: 3,
-                                        textTransform: "none",
-                                        fontSize: "1rem"
-                                    }}
-                                    color={correctOpt === "C" ? "success" : errorOption === "C" ? "error" : "primary"}
-
-
-                                    onClick={() => handleOptionClick("C")}
-
-
-                                >
-                                    {data.optionC}
-                                </Button>
-
-                                <Button
-                                    variant="contained"
-                                    sx={{
-                                        paddingY: 2,
-                                        borderRadius: 3,
-                                        textTransform: "none",
-                                        fontSize: "1rem"
-                                    }}
-                                    color={correctOpt === "D" ? "success" : errorOption === "D" ? "error" : "primary"}
-
-
-                                    onClick={() => handleOptionClick("D")}
-
-
-                                >
-                                    {data.optionD}
-                                </Button>
-                            </Box>
-
-                        </Container>
-                    </Box>
-
-                    {/* Right Side Leaderboard */}
-
-                </Box>
-            }
-            <Backdrop
-                open={loading}
-
-            >
-                <span className={effect}></span>
-            </Backdrop>
-        </>
+      <Box
+        minHeight="100vh"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          backgroundImage: `url(${quizBG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <Box
+          sx={{
+            backgroundColor: "rgba(255,255,255,0.9)",
+            padding: 4,
+            borderRadius: 4,
+            boxShadow: "0 10px 30px rgba(0,0,0,0.25)"
+          }}
+        >
+          <Typography variant="h4" fontWeight={700}>
+            Quiz completed 🎉
+          </Typography>
+        </Box>
+      </Box>
     );
-}
+  }
 
+  return (
+    <Box
+      minHeight="100vh"
+      width="100%"
+      sx={{
+        backgroundImage: `url(${quizBG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        display: "flex",
+        justifyContent: "center",
+        padding: 2
+      }}
+    >
+      {/* Soft overlay for readability */}
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          backgroundColor: "rgba(0,0,0,0.25)"
+        }}
+      />
+
+      <Container
+        maxWidth="sm"
+        sx={{
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexDirection: "column",
+          gap: 3
+        }}
+      >
+        {/* Question Number Circle (placeholder) */}
+        <Box display="flex" justifyContent="center" mt={1}>
+          <Box
+            sx={{
+              width: 64,
+              height: 64,
+              borderRadius: "50%",
+              background:
+                "linear-gradient(135deg, #6a85f1, #8f9cff)",
+              color: "#fff",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: 700,
+              fontSize: "1.2rem",
+              boxShadow: "0 8px 20px rgba(0,0,0,0.35)"
+            }}
+          >
+            {parseInt(curQuestion) + 1}/{parseInt(totalQuestions)    }
+          </Box>
+        </Box>
+
+        {/* Question Card */}
+        <Box
+          sx={{
+            backgroundColor: "rgba(255,255,255,0.95)",
+            borderRadius: 4,
+            padding: 3,
+            boxShadow: "0 12px 35px rgba(0,0,0,0.25)"
+          }}
+        >
+          <Typography
+            variant="h6"
+            fontWeight={600}
+            textAlign="center"
+            lineHeight={1.5}
+            color="#1f2937"
+          >
+            {data.question}
+          </Typography>
+        </Box>
+
+        {/* Options */}
+        <Box display="flex" flexDirection="column" gap={1.8}>
+          {[
+            { key: "A", text: data.optionA },
+            { key: "B", text: data.optionB },
+            { key: "C", text: data.optionC },
+            { key: "D", text: data.optionD }
+          ].map((opt) => {
+            const isSelected = selected === opt.key;
+
+            let bg = "rgba(255,255,255,0.95)";
+            let color = "#1f2937";
+            let border = "1px solid #e5e7eb";
+
+            if (isSelected && result === "correct") {
+              bg = "#e8f6ee";
+              color = "#1e7f43";
+              border = "1px solid #1e7f43";
+            }
+
+            if (isSelected && result === "wrong") {
+              bg = "#fdecec";
+              color = "#c62828";
+              border = "1px solid #c62828";
+            }
+
+            return (
+              <Button
+                key={opt.key}
+                fullWidth
+                onClick={() => handleClick(opt.key)}
+                disabled={loading}
+                sx={{
+                  justifyContent: "space-between",
+                  paddingY: 1.7,
+                  paddingX: 2.5,
+                  borderRadius: 3,
+                  backgroundColor: bg,
+                  color: color,
+                  border: border,
+                  textTransform: "none",
+                  fontSize: "1rem",
+                  fontWeight: 500,
+                  boxShadow:
+                    "0 6px 18px rgba(0,0,0,0.15)",
+                  "&:hover": {
+                    backgroundColor: bg
+                  }
+                }}
+              >
+                {opt.text}
+                {isSelected && result === "correct" && (
+                  <CheckCircleIcon />
+                )}
+                {isSelected && result === "wrong" && (
+                  <CancelIcon />
+                )}
+              </Button>
+            );
+          })}
+        </Box>
+      </Container>
+
+      {/* Click lock */}
+      <Backdrop open={loading} sx={{ backgroundColor: "transparent" }} />
+    </Box>
+  );
+}

@@ -9,6 +9,7 @@ import ManualCreation from '../ManualCreation'
 import PlayQuiz from '../PlayQuiz'
 import Login from '../Authentication/Login'
 import JoinQuiz from '../JoinQuiz'
+import LeaderBoard from '../LeaderBoard'
 export default function AppRouter({data})
 
  {
@@ -24,6 +25,8 @@ export default function AppRouter({data})
         <Route path='/makeQuiz' element={<ManualCreation/>}/>
         <Route path='/play/:code' element={<PlayQuiz/>}/>
         <Route path='/join' element={<JoinQuiz/>}/>
+        <Route path='/leaderBoard' element={<LeaderBoard/>}/>
+
 
 
 

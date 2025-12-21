@@ -40,6 +40,7 @@ export default function PlayQuiz() {
         console.log(data)
         setResponse(data)
         setRequestStatus(true)
+        console.log(JSON.stringify(data));
       }
       )
 
@@ -145,7 +146,8 @@ export default function PlayQuiz() {
 
               }
             }
-            quizId={code}
+            curQuestion={curQuestion}
+            totalQuestions={response.data.questions.length}
             score={score}
           />
         </>
