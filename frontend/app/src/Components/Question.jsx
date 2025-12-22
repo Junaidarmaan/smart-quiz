@@ -9,9 +9,18 @@ import {
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 
+import Live from "./Live";
 import quizBG from "./assets/quizBG.jpg"; // adjust path if needed
 
-export default function Question({ data, onNext, flag, isCorrect ,curQuestion, totalQuestions,score}) {
+export default function Question({
+  data,
+  onNext,
+  flag,
+  isCorrect,
+  curQuestion,
+  totalQuestions,
+  score
+}) {
   const [selected, setSelected] = useState(null);
   const [result, setResult] = useState(null); // "correct" | "wrong"
   const [loading, setLoading] = useState(false);
@@ -23,7 +32,18 @@ export default function Question({ data, onNext, flag, isCorrect ,curQuestion, t
     setLoading(true);
 
     const res = await isCorrect(option);
-    setResult(res ? "correct" : "wrong");
+
+    if (res === true) {
+      setResult("correct");
+
+      // 🔥 SCORE UPDATE (same as your previous logic)
+      Live.send("/app/updateScore", {
+        userName: sessionStorage.getItem("userName"),
+        quizId: sessionStorage.getItem("quizId")
+      });
+    } else {
+      setResult("wrong");
+    }
 
     setTimeout(() => {
       setSelected(null);
@@ -77,7 +97,7 @@ export default function Question({ data, onNext, flag, isCorrect ,curQuestion, t
         padding: 2
       }}
     >
-      {/* Soft overlay for readability */}
+      {/* Overlay */}
       <Box
         sx={{
           position: "absolute",
@@ -96,7 +116,7 @@ export default function Question({ data, onNext, flag, isCorrect ,curQuestion, t
           gap: 3
         }}
       >
-        {/* Question Number Circle (placeholder) */}
+        {/* Question Number */}
         <Box display="flex" justifyContent="center" mt={1}>
           <Box
             sx={{
@@ -110,11 +130,11 @@ export default function Question({ data, onNext, flag, isCorrect ,curQuestion, t
               justifyContent: "center",
               alignItems: "center",
               fontWeight: 700,
-              fontSize: "1.2rem",
+              fontSize: "1.1rem",
               boxShadow: "0 8px 20px rgba(0,0,0,0.35)"
             }}
           >
-            {parseInt(curQuestion) + 1}/{parseInt(totalQuestions)    }
+            {parseInt(curQuestion) + 1}/{parseInt(totalQuestions)}
           </Box>
         </Box>
 

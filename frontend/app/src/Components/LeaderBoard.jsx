@@ -9,57 +9,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
 import quizBG from "./assets/quizBG.jpg"; // adjust path if needed
-const dummyRankings = [
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 120,
-    userName: "Alex"
-  },
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 110,
-    userName: "JUNNU GAMER YT!"
-  },
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 95,
-    userName: "Robin"
-  },
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 88,
-    userName: "Bhavna"
-  },
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 80,
-    userName: "Mike"
-  },
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 72,
-    userName: "Andrew"
-  },
-  {
-    curQuestion: 5,
-    quizId: "poke-123",
-    score: 65,
-    userName: "William"
-  }
-];
 
 
-
-
-export default function LeaderBoard({ rankings={dummyRankings}, currentUserName }) {
-  const topThree = dummyRankings.slice(0, 3);
-  const rest = dummyRankings.slice(3);
+export default function LeaderBoard({ rankings, currentUserName }) {
+  const topThree = rankings.slice(0, 3);
+  const rest = rankings.slice(3);
 
 
   return (
