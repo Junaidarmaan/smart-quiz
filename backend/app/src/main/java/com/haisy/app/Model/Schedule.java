@@ -6,7 +6,7 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class Schedule {
-    LocalDateTime dateTime;
+    LocalDateTime dateTime;   
     int duration;
     public LocalDateTime getDateTime() {
         return dateTime;

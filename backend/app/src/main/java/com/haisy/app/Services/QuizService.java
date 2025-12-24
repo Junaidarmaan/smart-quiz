@@ -107,4 +107,14 @@ public class QuizService {
         boolean result = q.getCorrectOption().equals(selectedoption);
         return result;
     }
+
+    public boolean removeQuiz(String joinCode) {
+        Quiz quiz = quizRepo.findByJoinCode(joinCode);
+        if(quiz == null){
+            return false;
+        }
+        int id = quiz.getQuizId();
+        quizRepo.deleteById(id);
+        return true;
+    }
 }
