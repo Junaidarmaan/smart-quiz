@@ -1,0 +1,80 @@
+[2025-12-25 11:10:29] [INFO] Fetching all quizzes
+[2025-12-25 11:11:29] [INFO] Fetching all quizzes
+[2025-12-25 11:12:06] [INFO] Fetching all quizzes
+[2025-12-25 11:12:38] [INFO] Fetching all quizzes
+[2025-12-25 11:12:53] [INFO] Fetching all quizzes
+[2025-12-25 11:13:33] [INFO] Fetching all quizzes
+[2025-12-25 11:14:13] [INFO] Fetching all quizzes
+[2025-12-25 11:15:01] [INFO] Fetching all quizzes
+[2025-12-25 11:15:32] [INFO] Fetching all quizzes
+[2025-12-25 11:15:44] [INFO] Creating new quiz
+[2025-12-25 11:15:44] [INFO] Attempting to create new quiz
+[2025-12-25 11:15:44] [DEBUG] Received join code: dora
+[2025-12-25 11:15:44] [ERROR] Quiz creation failed. Scheduled time is in the past.
+[2025-12-25 11:16:07] [INFO] Creating new quiz
+[2025-12-25 11:16:07] [INFO] Attempting to create new quiz
+[2025-12-25 11:16:07] [DEBUG] Received join code: dora
+[2025-12-25 11:16:07] [ERROR] Quiz creation failed. Scheduled time is in the past.
+[2025-12-25 11:16:19] [INFO] Creating new quiz
+[2025-12-25 11:16:19] [INFO] Attempting to create new quiz
+[2025-12-25 11:16:19] [DEBUG] Received join code: dora
+[2025-12-25 11:16:19] [INFO] Quiz created successfully with join code: dora
+[2025-12-25 11:16:32] [INFO] Fetching all quizzes
+[2025-12-25 11:17:32] [INFO] Fetching all quizzes
+[2025-12-25 11:18:32] [INFO] Fetching all quizzes
+[2025-12-25 11:18:37] [INFO] Fetching all quizzes
+[2025-12-25 11:18:51] [INFO] User attempting to join quiz with code: dora
+[2025-12-25 11:18:51] [INFO] User attempting to join quiz with code: dora
+[2025-12-25 11:18:51] [DEBUG] Checking if join code exists: dora -> true
+[2025-12-25 11:18:51] [INFO] User allowed to join quiz: dora
+[2025-12-25 11:18:51] [INFO] Fetching current user progress for: JUNNU GAMER YT!
+[2025-12-25 11:18:51] [DEBUG] User not found for quiz: dora
+[2025-12-25 11:18:51] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-25 11:18:51] [INFO] Attempting to add user to quiz: dora
+[2025-12-25 11:18:51] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-25 11:18:51] [INFO] User added successfully: JUNNU GAMER YT!
+[2025-12-25 11:18:51] [DEBUG] Updating rankings
+[2025-12-25 11:18:51] [INFO] New quiz created and user added. QuizId: dora
+[2025-12-25 11:18:51] [DEBUG] Fetching rankings for quiz: dora
+[2025-12-25 11:18:51] [DEBUG] Fetching leaderboard
+[2025-12-25 11:18:51] [DEBUG] Updating rankings
+[2025-12-25 11:18:51] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-25 11:19:37] [INFO] Fetching all quizzes
+[2025-12-25 11:20:37] [INFO] Fetching all quizzes
+[2025-12-25 11:21:37] [INFO] Fetching all quizzes
+[2025-12-25 11:22:37] [INFO] Fetching all quizzes
+[2025-12-25 11:22:58] [INFO] Fetching all quizzes
+[2025-12-25 11:23:03] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-25 11:23:03] [INFO] Attempting to add user to quiz: dora
+[2025-12-25 11:23:03] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-25 11:23:03] [INFO] User added successfully: JUNNU GAMER YT!
+[2025-12-25 11:23:03] [DEBUG] Updating rankings
+[2025-12-25 11:23:03] [INFO] New quiz created and user added. QuizId: dora
+[2025-12-25 11:23:03] [DEBUG] Fetching rankings for quiz: dora
+[2025-12-25 11:23:03] [DEBUG] Fetching leaderboard
+[2025-12-25 11:23:03] [DEBUG] Updating rankings
+[2025-12-25 11:23:03] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-25 11:23:58] [INFO] Fetching all quizzes
+[2025-12-25 11:24:35] [INFO] Validating answer
+[2025-12-25 11:24:35] [DEBUG] Answer check initiated | quizId=12, questionId=64
+[2025-12-25 11:24:35] [INFO] Answer validation result: true
+[2025-12-25 11:24:35] [INFO] Score update received for user: JUNNU GAMER YT!
+[2025-12-25 11:24:35] [INFO] Updating score for user: JUNNU GAMER YT!
+[2025-12-25 11:24:35] [INFO] Updated score for user: JUNNU GAMER YT!
+[2025-12-25 11:24:35] [DEBUG] Updating rankings
+[2025-12-25 11:24:35] [INFO] Score updated for user: JUNNU GAMER YT!
+[2025-12-25 11:24:35] [DEBUG] Fetching rankings for quiz: dora
+[2025-12-25 11:24:35] [DEBUG] Fetching leaderboard
+[2025-12-25 11:24:35] [DEBUG] Updating rankings
+[2025-12-25 11:24:35] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
+[2025-12-25 11:24:35] [DEBUG] Fetching user: JUNNU GAMER YT!
+[2025-12-25 11:24:35] [INFO] Score updated and broadcasted for user: JUNNU GAMER YT!
+[2025-12-25 11:24:38] [INFO] Validating answer
+[2025-12-25 11:24:38] [DEBUG] Answer check initiated | quizId=12, questionId=65
+[2025-12-25 11:24:38] [INFO] Answer validation result: false
+[2025-12-25 11:24:40] [INFO] Validating answer
+[2025-12-25 11:24:40] [DEBUG] Answer check initiated | quizId=12, questionId=66
+[2025-12-25 11:24:40] [INFO] Answer validation result: false
+[2025-12-25 11:24:58] [INFO] Fetching all quizzes
+[2025-12-25 11:25:58] [INFO] Fetching all quizzes
+[2025-12-25 11:26:58] [INFO] Fetching all quizzes

@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Quiz {
@@ -26,6 +27,10 @@ public class Quiz {
 
     @Embedded
     Schedule schedule;
+
+    @OneToOne(mappedBy = "quiz", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    QuizResultSet quizResults;
 
     public Integer getQuizId() {
         return quizId;
@@ -57,6 +62,14 @@ public class Quiz {
 
     public void setJoinCode(String joinCode) {
         this.joinCode = joinCode;
+    }
+
+    public QuizResultSet getQuizResults() {
+        return quizResults;
+    }
+
+    public void setQuizResults(QuizResultSet quizResults) {
+        this.quizResults = quizResults;
     }
 
    

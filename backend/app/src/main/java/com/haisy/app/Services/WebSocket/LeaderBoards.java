@@ -5,67 +5,79 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.stereotype.Service;
 
+import com.haisy.app.Logs.FileLogger;
+
 @Service
 public class LeaderBoards {
-    ConcurrentHashMap<String,Board> map = new ConcurrentHashMap<>();
-  
-    public boolean isValidQuizId(String id){
+
+    ConcurrentHashMap<String, Board> map = new ConcurrentHashMap<>();
+
+    public boolean isValidQuizId(String id) {
         return map.containsKey(id);
     }
-    public void adduser(UserProfile user){
-        if(map.containsKey(user.getQuizId())){
+
+    public void adduser(UserProfile user) {
+        FileLogger.info("Attempting to add user to quiz: " + user.getQuizId());
+
+        if (map.containsKey(user.getQuizId())) {
             Board b = map.get(user.getQuizId());
-            b.addNewUser(user); 
-            System.out.println("quiz id found in the map");
-            return;
-        }else{
-            Board b = new Board();
             b.addNewUser(user);
-            map.put(user.getQuizId(), b);
+            FileLogger.info("User added to existing quiz: " + user.getUserName());
+            return;
         }
-        System.out.println("created new quiz");
+
+        Board b = new Board();
+        b.addNewUser(user);
+        map.put(user.getQuizId(), b);
+
+        FileLogger.info("New quiz created and user added. QuizId: " + user.getQuizId());
     }
-    public List<UserProfile> getRankings(String quizId){
-        if(map.containsKey(quizId)){
+
+    public List<UserProfile> getRankings(String quizId) {
+        if (map.containsKey(quizId)) {
+            FileLogger.debug("Fetching rankings for quiz: " + quizId);
             return map.get(quizId).getRankings();
         }
-        System.out.println("rankings are null");
+        FileLogger.debug("No rankings found for quiz: " + quizId);
         return null;
     }
-    public void updateScore(UserProfile user){
-        if(map.containsKey(user.getQuizId())){
+
+    public void updateScore(UserProfile user) {
+        if (map.containsKey(user.getQuizId())) {
             map.get(user.getQuizId()).updateScore(user.getUserName(), user.getScore());
-            System.out.println("score updated for " +user.getUserName() + " was successfull");
+            FileLogger.info("Score updated for user: " + user.getUserName());
             return;
         }
-            System.out.println("invalid quiz id");
+        FileLogger.error("Failed to update score. Quiz not found: " + user.getQuizId());
     }
 
-    public UserProfile getUserProfileStatus(UserProfile user){
-        if(map.containsKey(user.getQuizId())){
-            Board b = map.get(user.getQuizId());
-            UserProfile u = b.getUser(user.getUserName());
-            return u;
+    public UserProfile getUserProfileStatus(UserProfile user) {
+        if (map.containsKey(user.getQuizId())) {
+            FileLogger.debug("Fetching user profile for: " + user.getUserName());
+            return map.get(user.getQuizId()).getUser(user.getUserName());
         }
+        FileLogger.debug("User not found for quiz: " + user.getQuizId());
         return null;
     }
 
-    public void removeQuiz(String quizId){
-        if(map.contains(quizId)){
+    public void removeQuiz(String quizId) {
+        if (map.containsKey(quizId)) {
             map.remove(quizId);
-            System.out.println("delted the quiz with quiz id : " +  quizId);
-        }
-        System.out.println("no quiz found with quiz id " + quizId + "so nothing deleted");
-    }
-    public void removeUser(UserProfile user){
-        System.out.println("at removing methods the quiz id is " + user.getQuizId());
-        System.out.println("at removing methods the map  is " + map);
-
-        if(map.containsKey(user.getQuizId())){
-            map.get(user.getQuizId()).removeUser(user);
-            System.out.println("user removed form quiz success fuly" + user.getQuizId() + " " + user.getUserName());
+            FileLogger.info("Quiz removed successfully: " + quizId);
             return;
         }
-        System.out.println("quiz id not found to remove the user");
+        FileLogger.error("Attempted to remove non-existing quiz: " + quizId);
+    }
+
+    public void removeUser(UserProfile user) {
+        FileLogger.info("Attempting to remove user: " + user.getUserName());
+
+        if (map.containsKey(user.getQuizId())) {
+            map.get(user.getQuizId()).removeUser(user);
+            FileLogger.info("User removed successfully: " + user.getUserName());
+            return;
+        }
+
+        FileLogger.error("User removal failed, quiz not found: " + user.getQuizId());
     }
 }

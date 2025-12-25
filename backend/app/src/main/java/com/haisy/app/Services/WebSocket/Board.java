@@ -5,49 +5,72 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Board {
-    List<UserProfile> userprofiles = Collections.synchronizedList(new ArrayList<>());  
+import com.haisy.app.Logs.FileLogger;
 
-    public void addNewUser(UserProfile user){
-        for(UserProfile el : userprofiles){
-            if(user.getUserName().equals(el.getUserName())){
-                System.out.println("user alredy there in the quiz so not added again");
+public class Board {
+
+    List<UserProfile> userprofiles = Collections.synchronizedList(new ArrayList<>());
+
+    public void addNewUser(UserProfile user) {
+        FileLogger.info("Attempting to add user: " + user.getUserName());
+
+        for (UserProfile el : userprofiles) {
+            if (user.getUserName().equals(el.getUserName())) {
+                FileLogger.info("User already exists, skipping add: " + user.getUserName());
                 return;
             }
         }
+
         userprofiles.add(user);
-        System.out.println("user addeds new user");
+        FileLogger.info("User added successfully: " + user.getUserName());
+
         updateTheRankings();
     }
-    public void removeUser(UserProfile user){
-        userprofiles.removeIf(u->u.getUserName().equals(user.getUserName()));
+
+    public void removeUser(UserProfile user) {
+        FileLogger.info("Attempting to remove user: " + user.getUserName());
+
+        userprofiles.removeIf(u -> u.getUserName().equals(user.getUserName()));
+
+        FileLogger.info("User removed: " + user.getUserName());
+
         updateTheRankings();
     }
-    public void updateTheRankings(){
+
+    public void updateTheRankings() {
+        FileLogger.debug("Updating rankings");
         userprofiles.sort(Comparator.comparingInt(UserProfile::getScore).reversed());
     }
-    public List<UserProfile> getRankings(){
+
+    public List<UserProfile> getRankings() {
+        FileLogger.debug("Fetching leaderboard");
         updateTheRankings();
-        return  userprofiles;
+        return userprofiles;
     }
-    public void updateScore(String userName,int inc){
-        for(UserProfile u : userprofiles){
-            if(u.getUserName().equals(userName)){
-                u.setScore(u.getScore()+1);
-                u.setCurQuestion(u.getCurQuestion()+1);
+
+    public void updateScore(String userName, int inc) {
+        FileLogger.info("Updating score for user: " + userName);
+
+        for (UserProfile u : userprofiles) {
+            if (u.getUserName().equals(userName)) {
+                u.setScore(u.getScore() + inc);
+                u.setCurQuestion(u.getCurQuestion() + 1);
+                FileLogger.info("Updated score for user: " + userName);
+                break;
             }
         }
+
         updateTheRankings();
-        
     }
-    public UserProfile getUser(String name){
-        for(UserProfile u : userprofiles){
-            if(u.getUserName().equals(name)){
+
+    public UserProfile getUser(String name) {
+        FileLogger.debug("Fetching user: " + name);
+
+        for (UserProfile u : userprofiles) {
+            if (u.getUserName().equals(name)) {
                 return u;
             }
         }
         return null;
     }
-    
-    
 }
