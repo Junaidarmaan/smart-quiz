@@ -39,29 +39,47 @@ export default function PlayQuiz() {
      Validate quiz (joinQuiz)
   -------------------------------- */
   useEffect(() => {
-    const url = `http://localhost:8080/joinQuiz/${code}`;
+  const url = `http://localhost:8080/joinQuiz/${code}`;
 
-    fetch(url, { method: "POST" })
-      .then((pack) =>{
+  fetch(url, { method: "POST" })
+    .then(async (res) => {
+      console.log("HTTP status:", res.status);
 
-          console.log("cur ------> " + pack);
-        return pack.json()
-      }
-    
-    )
-      .then((data) => {
-        console.log(data);
-        setResponse(data);
-        setRequestStatus(true);
-      })
-      .catch(() => {
-        setRequestStatus(true);
-        setResponse({
+      // 204 / empty body case
+      if (res.status === 204) {
+        return {
           action: false,
-          message: "Something went wrong"
-        });
+          message: "No response body from server"
+        };
+      }
+
+      const text = await res.text();
+
+      // empty string = nothing to parse
+      if (!text || text.trim() === "") {
+        return {
+          action: false,
+          message: "Empty response body from server"
+        };
+      }
+
+      // valid JSON
+      return JSON.parse(text);
+    })
+    .then((data) => {
+      console.log("Parsed response:", data);
+      setResponse(data);
+      setRequestStatus(true);
+    })
+    .catch((err) => {
+      console.error("Join quiz failed:", err);
+      setRequestStatus(true);
+      setResponse({
+        action: false,
+        message: "Something went wrong"
       });
-  }, [code]);
+    });
+}, [code]);
 
   /* -------------------------------
      WebSocket + current question

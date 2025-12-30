@@ -398,3 +398,73 @@
 [2025-12-30 23:51:49] [DEBUG] Fetching leaderboard
 [2025-12-30 23:51:49] [DEBUG] Updating rankings
 [2025-12-30 23:51:50] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-31 00:00:22] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-31 00:00:22] [INFO] Attempting to add user to quiz: java-123
+[2025-12-31 00:00:22] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-31 00:00:22] [INFO] User added successfully: JUNNU GAMER YT!
+[2025-12-31 00:00:22] [DEBUG] Updating rankings
+[2025-12-31 00:00:22] [INFO] New quiz created and user added. QuizId: java-123
+[2025-12-31 00:00:22] [DEBUG] Fetching rankings for quiz: java-123
+[2025-12-31 00:00:22] [DEBUG] Fetching leaderboard
+[2025-12-31 00:00:22] [DEBUG] Updating rankings
+[2025-12-31 00:00:22] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-31 00:04:59] [INFO] User attempting to join quiz with code: java-123
+[2025-12-31 00:04:59] [INFO] User attempting to join quiz with code: java-123
+[2025-12-31 00:04:59] [DEBUG] Checking if join code exists: java-123 -> true
+[2025-12-31 00:05:00] [INFO] User allowed to join quiz: java-123
+[2025-12-31 00:05:00] [INFO] Fetching current user progress for: JUNNU GAMER YT!
+[2025-12-31 00:05:00] [DEBUG] User not found for quiz: java-123
+[2025-12-31 00:05:00] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-31 00:05:00] [INFO] Attempting to add user to quiz: java-123
+[2025-12-31 00:05:00] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-31 00:05:00] [INFO] User added successfully: JUNNU GAMER YT!
+[2025-12-31 00:05:00] [DEBUG] Updating rankings
+[2025-12-31 00:05:00] [INFO] New quiz created and user added. QuizId: java-123
+[2025-12-31 00:05:00] [DEBUG] Fetching rankings for quiz: java-123
+[2025-12-31 00:05:00] [DEBUG] Fetching leaderboard
+[2025-12-31 00:05:00] [DEBUG] Updating rankings
+[2025-12-31 00:05:00] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-31 00:05:29] [INFO] Validating answer
+[2025-12-31 00:05:32] [INFO] Validating answer
+[2025-12-31 00:10:10] [INFO] User attempting to join quiz with code: java-123
+[2025-12-31 00:10:10] [INFO] Fetching current user progress for: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [DEBUG] Fetching user: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [INFO] User attempting to join quiz with code: java-123
+[2025-12-31 00:10:10] [DEBUG] Checking if join code exists: java-123 -> true
+[2025-12-31 00:10:10] [INFO] User allowed to join quiz: java-123
+[2025-12-31 00:10:10] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [INFO] Attempting to add user to quiz: java-123
+[2025-12-31 00:10:10] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [INFO] User already exists, skipping add: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [INFO] User added to existing quiz: JUNNU GAMER YT!
+[2025-12-31 00:10:10] [DEBUG] Fetching rankings for quiz: java-123
+[2025-12-31 00:10:10] [DEBUG] Fetching leaderboard
+[2025-12-31 00:10:10] [DEBUG] Updating rankings
+[2025-12-31 00:10:10] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-31 00:11:26] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-31 00:11:26] [INFO] Attempting to add user to quiz: java-123
+[2025-12-31 00:11:26] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-31 00:11:26] [INFO] User added successfully: JUNNU GAMER YT!
+[2025-12-31 00:11:26] [DEBUG] Updating rankings
+[2025-12-31 00:11:26] [INFO] New quiz created and user added. QuizId: java-123
+[2025-12-31 00:11:26] [DEBUG] Fetching rankings for quiz: java-123
+[2025-12-31 00:11:26] [DEBUG] Fetching leaderboard
+[2025-12-31 00:11:26] [DEBUG] Updating rankings
+[2025-12-31 00:11:26] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [INFO] User attempting to join quiz with code: java-123
+[2025-12-31 00:11:35] [INFO] User attempting to join quiz with code: java-123
+[2025-12-31 00:11:35] [DEBUG] Checking if join code exists: java-123 -> true
+[2025-12-31 00:11:35] [INFO] User allowed to join quiz: java-123
+[2025-12-31 00:11:35] [INFO] Fetching current user progress for: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [DEBUG] Fetching user: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [INFO] Attempting to add user to quiz: java-123
+[2025-12-31 00:11:35] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [INFO] User already exists, skipping add: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [INFO] User added to existing quiz: JUNNU GAMER YT!
+[2025-12-31 00:11:35] [DEBUG] Fetching rankings for quiz: java-123
+[2025-12-31 00:11:35] [DEBUG] Fetching leaderboard
+[2025-12-31 00:11:35] [DEBUG] Updating rankings
+[2025-12-31 00:11:35] [INFO] User joined quiz successfully: JUNNU GAMER YT!

@@ -20,6 +20,8 @@ import com.haisy.app.Model.Quiz;
 import com.haisy.app.Model.QuizResultSet;
 import com.haisy.app.Repository.*;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class QuizService {
 
@@ -90,7 +92,7 @@ public class QuizService {
         FileLogger.debug("Checking if join code exists: " + code + " -> " + exists);
         return exists;
     }
-
+    @Transactional
     public ResponseEntity<QuizJoinResponseDto> handleQuizJoin(String code) {
 
         FileLogger.info("User attempting to join quiz with code: " + code);
