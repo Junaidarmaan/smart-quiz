@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.haisy.app.DTO.QuizJoinResponseDto;
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Logs.FileLogger;
 import com.haisy.app.Mappers.QuizDtoMapper;
@@ -90,43 +91,42 @@ public class QuizService {
         return exists;
     }
 
-    public ResponseEntity<Map<String, Object>> handleQuizJoin(String code) {
+    public ResponseEntity<QuizJoinResponseDto> handleQuizJoin(String code) {
 
         FileLogger.info("User attempting to join quiz with code: " + code);
 
         boolean isValidCode = isCodeExist(code);
-        Map<String, Object> map = new HashMap<>();
-
+        QuizJoinResponseDto response = new QuizJoinResponseDto();
         if (!isValidCode) {
             FileLogger.error("Invalid quiz code attempted: " + code);
-            map.put("action", false);
-            map.put("message", "the provided code is invalid please check again");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(map);
+            response.setAction(true);
+            response.setMessage("the provided code is invalid please check again");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         }
 
         Quiz quiz = quizRepo.findByJoinCode(code);
-
+        
         int duration = quiz.getSchedule().getDuration();
         LocalDateTime start = quiz.getSchedule().getDateTime();
         LocalDateTime end = start.plusMinutes(duration);
         LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
-
+        
         boolean allowed =
-                (now.isAfter(start) || now.isEqual(start)) &&
-                (now.isBefore(end) || now.isEqual(end));
-
+        (now.isAfter(start) || now.isEqual(start)) &&
+        (now.isBefore(end) || now.isEqual(end));
+        
         if (allowed) {
+            QuizJoinResponseDto responseDto = mapper.toQuizJoinResponseDto(quiz);
             FileLogger.info("User allowed to join quiz: " + code);
-            map.put("action", true);
-            map.put("data", quiz);
-            map.put("message", "you can join the quiz");
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(map);
+            responseDto.setAction(true);
+            responseDto.setMessage("you can join the quiz");
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseDto);
         }
 
         FileLogger.info("User denied entry. Quiz not active. Code: " + code);
-        map.put("action", false);
-        map.put("message", "quiz is either not started yet or already over");
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(map);
+        response.setAction(false);
+        response.setMessage("quiz is either not started yet or already over");
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
     }
 
     public boolean isCorrect(Map<String, Object> map) {

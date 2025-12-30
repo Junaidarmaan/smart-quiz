@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+import com.haisy.app.DTO.QuizJoinResponseDto;
 import com.haisy.app.DTO.QuizQuestions;
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.DTO.QuizSchedule;
@@ -19,6 +20,7 @@ public interface QuizDtoMapper {
     Quiz toQuizEntity(QuizRequestDTO dto);
     @Mapping(target="quiz", ignore=true)
     @Mapping(target="id", ignore=true)
+
     Question toQuestionEntity(QuizQuestions question);
 
     @Mapping(target="dateTime"
@@ -29,4 +31,7 @@ public interface QuizDtoMapper {
     default LocalDateTime combine(QuizSchedule schedule){
         return LocalDateTime.of(schedule.getDate(), schedule.getTime());
     }
+    @Mapping(source = "questions", target = "data")
+    QuizJoinResponseDto toQuizJoinResponseDto(Quiz q);
+    QuizQuestions toQuizQuestions(Question q);
 }

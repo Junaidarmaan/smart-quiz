@@ -76,7 +76,7 @@ export default function Question({
           }}
         >
           <Typography variant="h4" fontWeight={700}>
-            Quiz completed 🎉
+            Quiz completed Your Score was {score}
           </Typography>
         </Box>
       </Box>

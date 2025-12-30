@@ -42,8 +42,15 @@ export default function PlayQuiz() {
     const url = `http://localhost:8080/joinQuiz/${code}`;
 
     fetch(url, { method: "POST" })
-      .then((pack) => pack.json())
+      .then((pack) =>{
+
+          console.log("cur ------> " + pack);
+        return pack.json()
+      }
+    
+    )
       .then((data) => {
+        console.log(data);
         setResponse(data);
         setRequestStatus(true);
       })
@@ -77,7 +84,7 @@ export default function PlayQuiz() {
     })
       .then((pack) => pack.json())
       .then((data) => {
-        const n = response.data.questions.length;
+        const n = response.data.length;
 
         if (data.curQuestion >= n) {
           setFinished(true);
@@ -88,13 +95,13 @@ export default function PlayQuiz() {
 
     Live.connect(() => {
       Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
-        setRankings(msg);
+        setRankings(msg.body);
       });
 
       Live.subscribe(
         `/topic/quiz/scoreUpdates/${sessionStorage.getItem("userName")}`,
         (msg) => {
-          setScore(msg.score);
+          setScore(msg.body.score);
         }
       );
 
@@ -126,6 +133,11 @@ export default function PlayQuiz() {
   return (
     <Box minHeight="100vh" width="100vw">
       {/* Invalid quiz */}
+      {!requestStatus &&
+      <Typography>
+        your code is being validated please wait patiently
+      </Typography>
+      }
       {requestStatus && !response.action && (
         <Box
           minHeight="100vh"
@@ -166,13 +178,13 @@ export default function PlayQuiz() {
           {/* Content */}
           {!showLeaderboard && (
             <Question
-              data={response.data.questions[curQuestion]}
+              data={response.data[curQuestion]}
               curQuestion={curQuestion}
-              totalQuestions={response.data.questions.length}
+              totalQuestions={response.data.length}
               score={score}
               flag={finished}
               onNext={() => {
-                const n = response.data.questions.length;
+                const n = response.data.length;
                 if (curQuestion === n - 1) {
                   setFinished(true);
                 } else {
@@ -184,7 +196,7 @@ export default function PlayQuiz() {
 
                 const req = {
                   quizId: response.data.quizId,
-                  questionId: response.data.questions[curQuestion].id,
+                  questionId: response.data[curQuestion].id,
                   selectedOption: optChoosen
                 };
 

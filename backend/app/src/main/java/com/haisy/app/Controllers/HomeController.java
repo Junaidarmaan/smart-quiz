@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.haisy.app.DTO.GoogleUserDto;
+import com.haisy.app.DTO.QuizJoinResponseDto;
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Model.Quiz;
 import com.haisy.app.Services.GeminiService;
@@ -58,7 +59,7 @@ public class HomeController {
     }
 
     @PostMapping("/joinQuiz/{code}")
-    public ResponseEntity<Map<String, Object>> handleJoin(@PathVariable String code) {
+    public ResponseEntity<QuizJoinResponseDto> handleJoin(@PathVariable String code) {
         FileLogger.info("User attempting to join quiz with code: " + code);
         return quizService.handleQuizJoin(code);
     }
