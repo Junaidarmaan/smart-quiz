@@ -1,470 +1,190 @@
-[2025-12-30 22:05:37] [INFO] Verifying Google login token
-[2025-12-30 22:05:37] [INFO] Google login attempt started
-[2025-12-30 22:05:37] [INFO] Google user authenticated: junnubest@gmail.com
-[2025-12-30 22:05:37] [INFO] JWT generated successfully for user: junnubest@gmail.com
-[2025-12-30 22:05:44] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:05:44] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:05:44] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:05:44] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:05:44] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:05:44] [DEBUG] User not found for quiz: cc-123
-[2025-12-30 22:05:44] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:05:44] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:05:44] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:05:44] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:05:44] [DEBUG] Updating rankings
-[2025-12-30 22:05:44] [INFO] New quiz created and user added. QuizId: cc-123
-[2025-12-30 22:05:44] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:05:44] [DEBUG] Fetching leaderboard
-[2025-12-30 22:05:44] [DEBUG] Updating rankings
-[2025-12-30 22:05:44] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:34:13] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:34:13] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:34:13] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:34:13] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:34:13] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-30 22:34:13] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-30 22:34:13] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:34:14] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:34:14] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:34:14] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:34:14] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-30 22:34:14] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-30 22:34:14] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:34:14] [DEBUG] Fetching leaderboard
-[2025-12-30 22:34:14] [DEBUG] Updating rankings
-[2025-12-30 22:34:14] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:34:38] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:34:38] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:34:38] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:34:38] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:35:00] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:35:00] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:35:00] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:35:00] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:35:38] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:35:38] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:35:38] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:35:38] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:35:38] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:35:38] [DEBUG] User not found for quiz: cc-123
-[2025-12-30 22:35:38] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:35:38] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:35:38] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:35:38] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:35:38] [DEBUG] Updating rankings
-[2025-12-30 22:35:38] [INFO] New quiz created and user added. QuizId: cc-123
-[2025-12-30 22:35:38] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:35:38] [DEBUG] Fetching leaderboard
-[2025-12-30 22:35:38] [DEBUG] Updating rankings
-[2025-12-30 22:35:38] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:35:40] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:35:40] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:35:40] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:35:40] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:35:41] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:35:41] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-30 22:35:41] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:35:41] [DEBUG] Fetching leaderboard
-[2025-12-30 22:35:41] [DEBUG] Updating rankings
-[2025-12-30 22:35:41] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:36:25] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:36:25] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:36:25] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:36:25] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:36:25] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-30 22:36:25] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:36:25] [DEBUG] Fetching leaderboard
-[2025-12-30 22:36:25] [DEBUG] Updating rankings
-[2025-12-30 22:36:25] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:36:40] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:36:40] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:36:40] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:36:40] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:36:40] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:36:40] [DEBUG] User not found for quiz: cc-123
-[2025-12-30 22:36:40] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:36:40] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:36:40] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:36:40] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:36:40] [DEBUG] Updating rankings
-[2025-12-30 22:36:40] [INFO] New quiz created and user added. QuizId: cc-123
-[2025-12-30 22:36:40] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:36:40] [DEBUG] Fetching leaderboard
-[2025-12-30 22:36:40] [DEBUG] Updating rankings
-[2025-12-30 22:36:40] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:37:32] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:37:32] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:37:32] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:37:32] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:37:32] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-30 22:37:32] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:37:32] [DEBUG] Fetching leaderboard
-[2025-12-30 22:37:32] [DEBUG] Updating rankings
-[2025-12-30 22:37:32] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:37:47] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:37:47] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:37:47] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:37:47] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:38:17] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:38:17] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:38:17] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:38:17] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:39:00] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:39:00] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:39:00] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:39:00] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:39:00] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:39:00] [DEBUG] User not found for quiz: cc-123
-[2025-12-30 22:39:00] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:39:00] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:39:00] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:39:00] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:39:00] [DEBUG] Updating rankings
-[2025-12-30 22:39:00] [INFO] New quiz created and user added. QuizId: cc-123
-[2025-12-30 22:39:00] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:39:00] [DEBUG] Fetching leaderboard
-[2025-12-30 22:39:00] [DEBUG] Updating rankings
-[2025-12-30 22:39:00] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:39:27] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:39:27] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:39:27] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:39:27] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:39:27] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-30 22:39:27] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:39:27] [DEBUG] Fetching leaderboard
-[2025-12-30 22:39:27] [DEBUG] Updating rankings
-[2025-12-30 22:39:27] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:40:13] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:40:13] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:40:13] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:40:13] [INFO] User allowed to join quiz: cc-123
-[2025-12-30 22:40:13] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:40:13] [DEBUG] User not found for quiz: cc-123
-[2025-12-30 22:40:13] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:40:13] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:40:13] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:40:13] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:40:13] [DEBUG] Updating rankings
-[2025-12-30 22:40:13] [INFO] New quiz created and user added. QuizId: cc-123
-[2025-12-30 22:40:13] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:40:13] [DEBUG] Fetching leaderboard
-[2025-12-30 22:40:13] [DEBUG] Updating rankings
-[2025-12-30 22:40:13] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:41:47] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:41:47] [INFO] Attempting to add user to quiz: cc-123
-[2025-12-30 22:41:47] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:41:47] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:41:47] [DEBUG] Updating rankings
-[2025-12-30 22:41:47] [INFO] New quiz created and user added. QuizId: cc-123
-[2025-12-30 22:41:47] [DEBUG] Fetching rankings for quiz: cc-123
-[2025-12-30 22:41:47] [DEBUG] Fetching leaderboard
-[2025-12-30 22:41:47] [DEBUG] Updating rankings
-[2025-12-30 22:41:47] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:42:07] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:42:07] [INFO] User attempting to join quiz with code: cc-123
-[2025-12-30 22:42:07] [DEBUG] Checking if join code exists: cc-123 -> true
-[2025-12-30 22:42:07] [INFO] User denied entry. Quiz not active. Code: cc-123
-[2025-12-30 22:43:07] [INFO] Generating quiz questions via Gemini
-[2025-12-30 22:43:07] [INFO] Generating quiz questions | topic=pokemon world coronation series, count=10, difficulty=3
-[2025-12-30 22:43:07] [DEBUG] Preparing prompt for topic: pokemon world coronation series
-[2025-12-30 22:43:07] [DEBUG] Prompt successfully created
-[2025-12-30 22:43:07] [DEBUG] Prompt generated for Gemini API
-[2025-12-30 22:43:14] [INFO] Received response from Gemini API
-[2025-12-30 22:43:28] [INFO] Creating new quiz
-[2025-12-30 22:43:28] [INFO] Attempting to create new quiz
-[2025-12-30 22:43:28] [DEBUG] Received join code: poke-30
-[2025-12-30 22:43:28] [INFO] Quiz created successfully with join code: poke-30
-[2025-12-30 22:44:13] [INFO] User attempting to join quiz with code: poke-30
-[2025-12-30 22:44:13] [INFO] User attempting to join quiz with code: poke-30
-[2025-12-30 22:44:13] [DEBUG] Checking if join code exists: poke-30 -> true
-[2025-12-30 22:44:13] [INFO] User allowed to join quiz: poke-30
-[2025-12-30 22:44:13] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 22:44:13] [DEBUG] User not found for quiz: poke-30
-[2025-12-30 22:44:13] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:44:13] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:44:13] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:44:13] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:44:13] [DEBUG] Updating rankings
-[2025-12-30 22:44:13] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:44:13] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:44:13] [DEBUG] Fetching leaderboard
-[2025-12-30 22:44:13] [DEBUG] Updating rankings
-[2025-12-30 22:44:13] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:51:58] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:51:58] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:51:58] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:51:58] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:51:58] [DEBUG] Updating rankings
-[2025-12-30 22:51:58] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:51:58] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:51:58] [DEBUG] Fetching leaderboard
-[2025-12-30 22:51:58] [DEBUG] Updating rankings
-[2025-12-30 22:51:58] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:52:34] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:52:34] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:52:34] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:52:34] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:52:34] [DEBUG] Updating rankings
-[2025-12-30 22:52:34] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:52:34] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:52:34] [DEBUG] Fetching leaderboard
-[2025-12-30 22:52:34] [DEBUG] Updating rankings
-[2025-12-30 22:52:34] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:52:41] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:52:41] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:52:41] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:52:41] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:52:41] [DEBUG] Updating rankings
-[2025-12-30 22:52:41] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:52:41] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:52:41] [DEBUG] Fetching leaderboard
-[2025-12-30 22:52:41] [DEBUG] Updating rankings
-[2025-12-30 22:52:41] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:54:08] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:54:08] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:54:08] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:54:08] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:54:08] [DEBUG] Updating rankings
-[2025-12-30 22:54:08] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:54:08] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:54:08] [DEBUG] Fetching leaderboard
-[2025-12-30 22:54:08] [DEBUG] Updating rankings
-[2025-12-30 22:54:08] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:55:13] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:55:13] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:55:13] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:55:13] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:55:13] [DEBUG] Updating rankings
-[2025-12-30 22:55:13] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:55:13] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:55:13] [DEBUG] Fetching leaderboard
-[2025-12-30 22:55:13] [DEBUG] Updating rankings
-[2025-12-30 22:55:13] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 22:56:22] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 22:56:22] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 22:56:22] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 22:56:22] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 22:56:22] [DEBUG] Updating rankings
-[2025-12-30 22:56:22] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 22:56:22] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 22:56:22] [DEBUG] Fetching leaderboard
-[2025-12-30 22:56:22] [DEBUG] Updating rankings
-[2025-12-30 22:56:22] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:03:03] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:03:03] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:03:03] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:03:03] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:03:03] [DEBUG] Updating rankings
-[2025-12-30 23:03:03] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:03:03] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:03:03] [DEBUG] Fetching leaderboard
-[2025-12-30 23:03:03] [DEBUG] Updating rankings
-[2025-12-30 23:03:03] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:20:15] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:20:15] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:20:15] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:20:15] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:20:15] [DEBUG] Updating rankings
-[2025-12-30 23:20:15] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:20:15] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:20:15] [DEBUG] Fetching leaderboard
-[2025-12-30 23:20:15] [DEBUG] Updating rankings
-[2025-12-30 23:20:15] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:23:52] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:23:52] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:23:52] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:23:52] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:23:52] [DEBUG] Updating rankings
-[2025-12-30 23:23:52] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:23:52] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:23:52] [DEBUG] Fetching leaderboard
-[2025-12-30 23:23:52] [DEBUG] Updating rankings
-[2025-12-30 23:23:52] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:34:12] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:34:12] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:34:12] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:34:12] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:34:12] [DEBUG] Updating rankings
-[2025-12-30 23:34:12] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:34:12] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:34:12] [DEBUG] Fetching leaderboard
-[2025-12-30 23:34:12] [DEBUG] Updating rankings
-[2025-12-30 23:34:12] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:36:41] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:36:41] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:36:41] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:36:41] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:36:41] [DEBUG] Updating rankings
-[2025-12-30 23:36:41] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:36:41] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:36:41] [DEBUG] Fetching leaderboard
-[2025-12-30 23:36:41] [DEBUG] Updating rankings
-[2025-12-30 23:36:41] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:38:27] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:38:27] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:38:27] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:38:27] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:38:27] [DEBUG] Updating rankings
-[2025-12-30 23:38:27] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:38:27] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:38:27] [DEBUG] Fetching leaderboard
-[2025-12-30 23:38:27] [DEBUG] Updating rankings
-[2025-12-30 23:38:27] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:39:42] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:39:42] [INFO] Attempting to add user to quiz: poke-30
-[2025-12-30 23:39:42] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:39:42] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:39:42] [DEBUG] Updating rankings
-[2025-12-30 23:39:42] [INFO] New quiz created and user added. QuizId: poke-30
-[2025-12-30 23:39:42] [DEBUG] Fetching rankings for quiz: poke-30
-[2025-12-30 23:39:42] [DEBUG] Fetching leaderboard
-[2025-12-30 23:39:42] [DEBUG] Updating rankings
-[2025-12-30 23:39:42] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-30 23:41:05] [INFO] User attempting to join quiz with code: poke-30
-[2025-12-30 23:41:05] [INFO] User attempting to join quiz with code: poke-30
-[2025-12-30 23:41:05] [DEBUG] Checking if join code exists: poke-30 -> true
-[2025-12-30 23:41:05] [INFO] User denied entry. Quiz not active. Code: poke-30
-[2025-12-30 23:41:40] [INFO] Generating quiz questions via Gemini
-[2025-12-30 23:41:40] [INFO] Generating quiz questions | topic=java , count=10, difficulty=1
-[2025-12-30 23:41:40] [DEBUG] Preparing prompt for topic: java 
-[2025-12-30 23:41:40] [DEBUG] Prompt successfully created
-[2025-12-30 23:41:40] [DEBUG] Prompt generated for Gemini API
-[2025-12-30 23:41:47] [INFO] Received response from Gemini API
-[2025-12-30 23:42:06] [INFO] Creating new quiz
-[2025-12-30 23:42:06] [INFO] Attempting to create new quiz
-[2025-12-30 23:42:06] [DEBUG] Received join code: java-123
-[2025-12-30 23:42:06] [INFO] Quiz created successfully with join code: java-123
-[2025-12-30 23:45:50] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:45:50] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:45:50] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-30 23:45:50] [INFO] User allowed to join quiz: java-123
-[2025-12-30 23:46:01] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:46:01] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:46:01] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-30 23:46:01] [INFO] User allowed to join quiz: java-123
-[2025-12-30 23:46:05] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:46:05] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:46:05] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-30 23:46:05] [INFO] User allowed to join quiz: java-123
-[2025-12-30 23:47:41] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:47:41] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:47:41] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-30 23:47:41] [INFO] User allowed to join quiz: java-123
-[2025-12-30 23:47:46] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:47:46] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:47:46] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-30 23:47:46] [INFO] User allowed to join quiz: java-123
-[2025-12-30 23:51:49] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:51:49] [INFO] User attempting to join quiz with code: java-123
-[2025-12-30 23:51:49] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-30 23:51:49] [INFO] User allowed to join quiz: java-123
-[2025-12-30 23:51:49] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-30 23:51:49] [DEBUG] User not found for quiz: java-123
-[2025-12-30 23:51:49] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-30 23:51:49] [INFO] Attempting to add user to quiz: java-123
-[2025-12-30 23:51:49] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-30 23:51:49] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-30 23:51:49] [DEBUG] Updating rankings
-[2025-12-30 23:51:49] [INFO] New quiz created and user added. QuizId: java-123
-[2025-12-30 23:51:49] [DEBUG] Fetching rankings for quiz: java-123
-[2025-12-30 23:51:49] [DEBUG] Fetching leaderboard
-[2025-12-30 23:51:49] [DEBUG] Updating rankings
-[2025-12-30 23:51:50] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-31 00:00:22] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-31 00:00:22] [INFO] Attempting to add user to quiz: java-123
-[2025-12-31 00:00:22] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-31 00:00:22] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-31 00:00:22] [DEBUG] Updating rankings
-[2025-12-31 00:00:22] [INFO] New quiz created and user added. QuizId: java-123
-[2025-12-31 00:00:22] [DEBUG] Fetching rankings for quiz: java-123
-[2025-12-31 00:00:22] [DEBUG] Fetching leaderboard
-[2025-12-31 00:00:22] [DEBUG] Updating rankings
-[2025-12-31 00:00:22] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-31 00:04:59] [INFO] User attempting to join quiz with code: java-123
-[2025-12-31 00:04:59] [INFO] User attempting to join quiz with code: java-123
-[2025-12-31 00:04:59] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-31 00:05:00] [INFO] User allowed to join quiz: java-123
-[2025-12-31 00:05:00] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-31 00:05:00] [DEBUG] User not found for quiz: java-123
-[2025-12-31 00:05:00] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-31 00:05:00] [INFO] Attempting to add user to quiz: java-123
-[2025-12-31 00:05:00] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-31 00:05:00] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-31 00:05:00] [DEBUG] Updating rankings
-[2025-12-31 00:05:00] [INFO] New quiz created and user added. QuizId: java-123
-[2025-12-31 00:05:00] [DEBUG] Fetching rankings for quiz: java-123
-[2025-12-31 00:05:00] [DEBUG] Fetching leaderboard
-[2025-12-31 00:05:00] [DEBUG] Updating rankings
-[2025-12-31 00:05:00] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-31 00:05:29] [INFO] Validating answer
-[2025-12-31 00:05:32] [INFO] Validating answer
-[2025-12-31 00:10:10] [INFO] User attempting to join quiz with code: java-123
-[2025-12-31 00:10:10] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [INFO] User attempting to join quiz with code: java-123
-[2025-12-31 00:10:10] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-31 00:10:10] [INFO] User allowed to join quiz: java-123
-[2025-12-31 00:10:10] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [INFO] Attempting to add user to quiz: java-123
-[2025-12-31 00:10:10] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-31 00:10:10] [DEBUG] Fetching rankings for quiz: java-123
-[2025-12-31 00:10:10] [DEBUG] Fetching leaderboard
-[2025-12-31 00:10:10] [DEBUG] Updating rankings
-[2025-12-31 00:10:10] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-31 00:11:26] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-31 00:11:26] [INFO] Attempting to add user to quiz: java-123
-[2025-12-31 00:11:26] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-31 00:11:26] [INFO] User added successfully: JUNNU GAMER YT!
-[2025-12-31 00:11:26] [DEBUG] Updating rankings
-[2025-12-31 00:11:26] [INFO] New quiz created and user added. QuizId: java-123
-[2025-12-31 00:11:26] [DEBUG] Fetching rankings for quiz: java-123
-[2025-12-31 00:11:26] [DEBUG] Fetching leaderboard
-[2025-12-31 00:11:26] [DEBUG] Updating rankings
-[2025-12-31 00:11:26] [INFO] User joined quiz successfully: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [INFO] User attempting to join quiz with code: java-123
-[2025-12-31 00:11:35] [INFO] User attempting to join quiz with code: java-123
-[2025-12-31 00:11:35] [DEBUG] Checking if join code exists: java-123 -> true
-[2025-12-31 00:11:35] [INFO] User allowed to join quiz: java-123
-[2025-12-31 00:11:35] [INFO] Fetching current user progress for: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [DEBUG] Fetching user: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [INFO] User attempting to join quiz: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [INFO] Attempting to add user to quiz: java-123
-[2025-12-31 00:11:35] [INFO] Attempting to add user: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [INFO] User already exists, skipping add: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [INFO] User added to existing quiz: JUNNU GAMER YT!
-[2025-12-31 00:11:35] [DEBUG] Fetching rankings for quiz: java-123
-[2025-12-31 00:11:35] [DEBUG] Fetching leaderboard
-[2025-12-31 00:11:35] [DEBUG] Updating rankings
-[2025-12-31 00:11:35] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2025-12-31 19:59:57] [INFO] Fetching all quizzes
+[2025-12-31 19:59:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:00:57] [INFO] Fetching all quizzes
+[2025-12-31 20:00:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:01:57] [INFO] Fetching all quizzes
+[2025-12-31 20:01:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:02:57] [INFO] Fetching all quizzes
+[2025-12-31 20:02:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:03:57] [INFO] Fetching all quizzes
+[2025-12-31 20:03:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:04:57] [INFO] Fetching all quizzes
+[2025-12-31 20:04:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:05:57] [INFO] Fetching all quizzes
+[2025-12-31 20:05:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:06:57] [INFO] Fetching all quizzes
+[2025-12-31 20:06:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:07:57] [INFO] Fetching all quizzes
+[2025-12-31 20:07:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:08:57] [INFO] Fetching all quizzes
+[2025-12-31 20:08:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:09:57] [INFO] Fetching all quizzes
+[2025-12-31 20:09:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:10:57] [INFO] Fetching all quizzes
+[2025-12-31 20:10:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:11:57] [INFO] Fetching all quizzes
+[2025-12-31 20:11:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:12:57] [INFO] Fetching all quizzes
+[2025-12-31 20:12:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:13:57] [INFO] Fetching all quizzes
+[2025-12-31 20:13:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:14:57] [INFO] Fetching all quizzes
+[2025-12-31 20:14:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:15:57] [INFO] Fetching all quizzes
+[2025-12-31 20:15:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:16:57] [INFO] Fetching all quizzes
+[2025-12-31 20:16:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:17:57] [INFO] Fetching all quizzes
+[2025-12-31 20:17:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:18:57] [INFO] Fetching all quizzes
+[2025-12-31 20:18:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:19:57] [INFO] Fetching all quizzes
+[2025-12-31 20:19:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:20:57] [INFO] Fetching all quizzes
+[2025-12-31 20:20:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:21:57] [INFO] Fetching all quizzes
+[2025-12-31 20:21:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:22:57] [INFO] Fetching all quizzes
+[2025-12-31 20:22:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:23:57] [INFO] Fetching all quizzes
+[2025-12-31 20:23:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:24:57] [INFO] Fetching all quizzes
+[2025-12-31 20:24:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:25:57] [INFO] Fetching all quizzes
+[2025-12-31 20:25:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:26:57] [INFO] Fetching all quizzes
+[2025-12-31 20:26:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:27:57] [INFO] Fetching all quizzes
+[2025-12-31 20:27:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:28:57] [INFO] Fetching all quizzes
+[2025-12-31 20:28:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:29:57] [INFO] Fetching all quizzes
+[2025-12-31 20:29:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:30:57] [INFO] Fetching all quizzes
+[2025-12-31 20:30:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:31:57] [INFO] Fetching all quizzes
+[2025-12-31 20:31:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:32:57] [INFO] Fetching all quizzes
+[2025-12-31 20:32:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:33:57] [INFO] Fetching all quizzes
+[2025-12-31 20:33:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:34:57] [INFO] Fetching all quizzes
+[2025-12-31 20:34:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:35:57] [INFO] Fetching all quizzes
+[2025-12-31 20:35:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:36:57] [INFO] Fetching all quizzes
+[2025-12-31 20:36:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:37:57] [INFO] Fetching all quizzes
+[2025-12-31 20:37:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:38:57] [INFO] Fetching all quizzes
+[2025-12-31 20:38:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:39:57] [INFO] Fetching all quizzes
+[2025-12-31 20:39:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:40:57] [INFO] Fetching all quizzes
+[2025-12-31 20:40:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:41:57] [INFO] Fetching all quizzes
+[2025-12-31 20:41:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:42:57] [INFO] Fetching all quizzes
+[2025-12-31 20:42:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:43:57] [INFO] Fetching all quizzes
+[2025-12-31 20:43:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:44:57] [INFO] Fetching all quizzes
+[2025-12-31 20:44:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:45:57] [INFO] Fetching all quizzes
+[2025-12-31 20:45:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:46:57] [INFO] Fetching all quizzes
+[2025-12-31 20:46:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:47:57] [INFO] Fetching all quizzes
+[2025-12-31 20:47:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:48:57] [INFO] Fetching all quizzes
+[2025-12-31 20:48:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:49:57] [INFO] Fetching all quizzes
+[2025-12-31 20:49:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:50:57] [INFO] Fetching all quizzes
+[2025-12-31 20:50:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:51:57] [INFO] Fetching all quizzes
+[2025-12-31 20:51:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:52:57] [INFO] Fetching all quizzes
+[2025-12-31 20:52:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:53:57] [INFO] Fetching all quizzes
+[2025-12-31 20:53:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:54:57] [INFO] Fetching all quizzes
+[2025-12-31 20:54:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:55:57] [INFO] Fetching all quizzes
+[2025-12-31 20:55:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:56:57] [INFO] Fetching all quizzes
+[2025-12-31 20:56:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:57:57] [INFO] Fetching all quizzes
+[2025-12-31 20:57:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:58:57] [INFO] Fetching all quizzes
+[2025-12-31 20:58:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 20:59:57] [INFO] Fetching all quizzes
+[2025-12-31 20:59:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:00:57] [INFO] Fetching all quizzes
+[2025-12-31 21:00:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:01:57] [INFO] Fetching all quizzes
+[2025-12-31 21:01:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:02:57] [INFO] Fetching all quizzes
+[2025-12-31 21:02:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:03:57] [INFO] Fetching all quizzes
+[2025-12-31 21:03:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:04:57] [INFO] Fetching all quizzes
+[2025-12-31 21:04:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:05:57] [INFO] Fetching all quizzes
+[2025-12-31 21:05:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:06:57] [INFO] Fetching all quizzes
+[2025-12-31 21:06:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:07:57] [INFO] Fetching all quizzes
+[2025-12-31 21:07:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:08:57] [INFO] Fetching all quizzes
+[2025-12-31 21:08:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:09:57] [INFO] Fetching all quizzes
+[2025-12-31 21:09:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:10:57] [INFO] Fetching all quizzes
+[2025-12-31 21:10:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:11:57] [INFO] Fetching all quizzes
+[2025-12-31 21:11:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:12:57] [INFO] Fetching all quizzes
+[2025-12-31 21:12:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:13:57] [INFO] Fetching all quizzes
+[2025-12-31 21:13:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:14:57] [INFO] Fetching all quizzes
+[2025-12-31 21:14:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:15:57] [INFO] Fetching all quizzes
+[2025-12-31 21:15:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:16:57] [INFO] Fetching all quizzes
+[2025-12-31 21:16:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:17:57] [INFO] Fetching all quizzes
+[2025-12-31 21:17:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:18:57] [INFO] Fetching all quizzes
+[2025-12-31 21:18:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:19:57] [INFO] Fetching all quizzes
+[2025-12-31 21:19:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:20:57] [INFO] Fetching all quizzes
+[2025-12-31 21:20:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:21:57] [INFO] Fetching all quizzes
+[2025-12-31 21:21:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:22:57] [INFO] Fetching all quizzes
+[2025-12-31 21:22:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:23:57] [INFO] Fetching all quizzes
+[2025-12-31 21:23:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:24:57] [INFO] Fetching all quizzes
+[2025-12-31 21:24:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:25:57] [INFO] Fetching all quizzes
+[2025-12-31 21:25:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:26:57] [INFO] Fetching all quizzes
+[2025-12-31 21:26:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:27:57] [INFO] Fetching all quizzes
+[2025-12-31 21:27:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:28:57] [INFO] Fetching all quizzes
+[2025-12-31 21:28:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:29:57] [INFO] Fetching all quizzes
+[2025-12-31 21:29:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:30:57] [INFO] Fetching all quizzes
+[2025-12-31 21:30:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:31:57] [INFO] Fetching all quizzes
+[2025-12-31 21:31:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:32:57] [INFO] Fetching all quizzes
+[2025-12-31 21:32:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2025-12-31 21:33:57] [INFO] Fetching all quizzes
+[2025-12-31 21:33:57] [INFO] The quiz wiht quiz joinCodejava has expired

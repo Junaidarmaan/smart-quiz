@@ -80,4 +80,12 @@ public class LeaderBoards {
 
         FileLogger.error("User removal failed, quiz not found: " + user.getQuizId());
     }
+
+    public ConcurrentHashMap<String, Board> getMap() {
+        return map;
+    }
+
+    public void setMap(ConcurrentHashMap<String, Board> map) {
+        this.map = map;
+    }
 }
