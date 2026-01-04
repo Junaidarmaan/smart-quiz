@@ -10,6 +10,7 @@ import PlayQuiz from '../PlayQuiz'
 import Login from '../Authentication/Login'
 import JoinQuiz from '../JoinQuiz'
 import LeaderBoard from '../LeaderBoard'
+import Results from '../Results'
 export default function AppRouter({data})
 
  {
@@ -26,6 +27,8 @@ export default function AppRouter({data})
         <Route path='/play/:code' element={<PlayQuiz/>}/>
         <Route path='/join' element={<JoinQuiz/>}/>
         <Route path='/leaderBoard' element={<LeaderBoard/>}/>
+        <Route path='/results' element={<Results/>}/>
+
 
 
 

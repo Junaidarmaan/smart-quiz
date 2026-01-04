@@ -30,7 +30,6 @@ public class Quiz {
 
     @OneToOne(mappedBy = "quiz", cascade = CascadeType.ALL)
     @JsonManagedReference
-    QuizResultSet quizResults;
 
     public Integer getQuizId() {
         return quizId;
@@ -64,13 +63,6 @@ public class Quiz {
         this.joinCode = joinCode;
     }
 
-    public QuizResultSet getQuizResults() {
-        return quizResults;
-    }
-
-    public void setQuizResults(QuizResultSet quizResults) {
-        this.quizResults = quizResults;
-    }
 
    
 }

@@ -20,7 +20,6 @@ public interface QuizDtoMapper {
     Quiz toQuizEntity(QuizRequestDTO dto);
     @Mapping(target="quiz", ignore=true)
     @Mapping(target="id", ignore=true)
-
     Question toQuestionEntity(QuizQuestions question);
 
     @Mapping(target="dateTime"

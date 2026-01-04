@@ -1,6 +1,8 @@
 package com.haisy.app.Controllers;
 
+import org.apache.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,15 +10,18 @@ import com.haisy.app.DTO.GoogleUserDto;
 import com.haisy.app.DTO.QuizJoinResponseDto;
 import com.haisy.app.DTO.QuizRequestDTO;
 import com.haisy.app.Model.Quiz;
+import com.haisy.app.Model.Results;
 import com.haisy.app.Services.GeminiService;
 import com.haisy.app.Services.LoginService;
 import com.haisy.app.Services.QuizService;
+import com.haisy.app.Services.ResultService;
 import com.haisy.app.Services.WebSocket.LeaderBoards;
 import com.haisy.app.Services.WebSocket.UserProfile;
 import com.haisy.app.Logs.FileLogger;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -24,7 +29,6 @@ public class HomeController {
 
     @Autowired
     QuizService quizService;
-
     @Autowired
     GeminiService gemini;
 
@@ -34,6 +38,13 @@ public class HomeController {
     @Autowired
     LoginService loginService;
 
+    @Autowired
+    ResultService result;
+
+    @GetMapping("/getLeaderBoard/{code}")
+    public List<UserProfile> getLeaderBoards(@PathVariable String code){
+        return lb.getRankings(code);
+    }
     @PostMapping("/isValid/{id}")
     public boolean isValidQuiz(@PathVariable String id) {
         FileLogger.info("Checking validity of quiz id: " + id);
@@ -41,7 +52,7 @@ public class HomeController {
     }
 
     @PostMapping("/createQuiz")
-    public ResponseEntity<Map<String, String>> createQuiz(@RequestBody QuizRequestDTO quiz) {
+    public ResponseEntity<Map<String, Object>> createQuiz(@RequestBody QuizRequestDTO quiz) {
         FileLogger.info("Creating new quiz");
         return quizService.add(quiz);
     }
@@ -95,5 +106,20 @@ public class HomeController {
             FileLogger.error("Token verification failed: " + e.getMessage());
             return ResponseEntity.status(401).body(Map.of("status", "error", "message", e.getMessage()));
         }
+    }
+
+    @GetMapping("/quiz/getRankings/{joinCode}")
+    public ResponseEntity<byte[]> getResultXl(@PathVariable String joinCode) {
+        Optional<Results> obj = result.getResultXL(joinCode);
+        if (obj.isPresent()) {
+            byte[] body = obj.get().getResultXL();
+            return ResponseEntity.ok()
+                    .header("Content-Disposition",
+                            "attachment; filename=leaderboard_" + joinCode + ".xlsx")
+                    .header("Content-Type",
+                            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+                    .body(body);
+        }
+        return ResponseEntity.status(HttpStatus.SC_NOT_FOUND).body(null);
     }
 }

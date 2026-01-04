@@ -17,7 +17,6 @@ import com.haisy.app.Logs.FileLogger;
 import com.haisy.app.Mappers.QuizDtoMapper;
 import com.haisy.app.Model.Question;
 import com.haisy.app.Model.Quiz;
-import com.haisy.app.Model.QuizResultSet;
 import com.haisy.app.Repository.*;
 
 import jakarta.transaction.Transactional;
@@ -34,12 +33,12 @@ public class QuizService {
     @Autowired
     private QuestionsRepository questionRepo;
 
-    public ResponseEntity<Map<String, String>> add(QuizRequestDTO dto) {
+    public ResponseEntity<Map<String, Object>> add(QuizRequestDTO dto) {
 
         FileLogger.info("Attempting to create new quiz");
 
         Quiz quiz = mapper.toQuizEntity(dto);
-        Map<String, String> response = new HashMap<>();
+        Map<String, Object> response = new HashMap<>();
 
         String receivedCode = quiz.getJoinCode();
         FileLogger.debug("Received join code: " + receivedCode);
@@ -55,18 +54,13 @@ public class QuizService {
         LocalDateTime today = LocalDateTime.now(ZoneId.of("Asia/Kolkata"));
         if (quiz.getSchedule().getDateTime().isBefore(today)) {
             FileLogger.error("Quiz creation failed. Scheduled time is in the past.");
-            response.put("data", "Quiz date and time must be in the future");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
-        QuizResultSet quizResults = new QuizResultSet();
-        quiz.setQuizResults(quizResults);
-        quizResults.setQuiz(quiz);
 
         quizRepo.save(quiz);
         FileLogger.info("Quiz created successfully with join code: " + quiz.getJoinCode());
-
-        response.put("data", "Quiz created successfully");
+            response.put("data", "quiz sucessfully registered");
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

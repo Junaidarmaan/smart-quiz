@@ -213,7 +213,7 @@ export default function PlayQuiz() {
                 const url = `http://localhost:8080/isCorrect`;
 
                 const req = {
-                  quizId: response.data.quizId,
+                  quizId: response.quizId,
                   questionId: response.data[curQuestion].id,
                   selectedOption: optChoosen
                 };

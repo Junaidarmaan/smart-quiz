@@ -1,190 +1,71 @@
-[2025-12-31 19:59:57] [INFO] Fetching all quizzes
-[2025-12-31 19:59:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:00:57] [INFO] Fetching all quizzes
-[2025-12-31 20:00:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:01:57] [INFO] Fetching all quizzes
-[2025-12-31 20:01:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:02:57] [INFO] Fetching all quizzes
-[2025-12-31 20:02:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:03:57] [INFO] Fetching all quizzes
-[2025-12-31 20:03:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:04:57] [INFO] Fetching all quizzes
-[2025-12-31 20:04:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:05:57] [INFO] Fetching all quizzes
-[2025-12-31 20:05:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:06:57] [INFO] Fetching all quizzes
-[2025-12-31 20:06:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:07:57] [INFO] Fetching all quizzes
-[2025-12-31 20:07:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:08:57] [INFO] Fetching all quizzes
-[2025-12-31 20:08:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:09:57] [INFO] Fetching all quizzes
-[2025-12-31 20:09:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:10:57] [INFO] Fetching all quizzes
-[2025-12-31 20:10:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:11:57] [INFO] Fetching all quizzes
-[2025-12-31 20:11:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:12:57] [INFO] Fetching all quizzes
-[2025-12-31 20:12:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:13:57] [INFO] Fetching all quizzes
-[2025-12-31 20:13:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:14:57] [INFO] Fetching all quizzes
-[2025-12-31 20:14:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:15:57] [INFO] Fetching all quizzes
-[2025-12-31 20:15:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:16:57] [INFO] Fetching all quizzes
-[2025-12-31 20:16:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:17:57] [INFO] Fetching all quizzes
-[2025-12-31 20:17:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:18:57] [INFO] Fetching all quizzes
-[2025-12-31 20:18:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:19:57] [INFO] Fetching all quizzes
-[2025-12-31 20:19:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:20:57] [INFO] Fetching all quizzes
-[2025-12-31 20:20:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:21:57] [INFO] Fetching all quizzes
-[2025-12-31 20:21:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:22:57] [INFO] Fetching all quizzes
-[2025-12-31 20:22:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:23:57] [INFO] Fetching all quizzes
-[2025-12-31 20:23:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:24:57] [INFO] Fetching all quizzes
-[2025-12-31 20:24:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:25:57] [INFO] Fetching all quizzes
-[2025-12-31 20:25:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:26:57] [INFO] Fetching all quizzes
-[2025-12-31 20:26:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:27:57] [INFO] Fetching all quizzes
-[2025-12-31 20:27:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:28:57] [INFO] Fetching all quizzes
-[2025-12-31 20:28:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:29:57] [INFO] Fetching all quizzes
-[2025-12-31 20:29:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:30:57] [INFO] Fetching all quizzes
-[2025-12-31 20:30:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:31:57] [INFO] Fetching all quizzes
-[2025-12-31 20:31:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:32:57] [INFO] Fetching all quizzes
-[2025-12-31 20:32:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:33:57] [INFO] Fetching all quizzes
-[2025-12-31 20:33:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:34:57] [INFO] Fetching all quizzes
-[2025-12-31 20:34:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:35:57] [INFO] Fetching all quizzes
-[2025-12-31 20:35:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:36:57] [INFO] Fetching all quizzes
-[2025-12-31 20:36:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:37:57] [INFO] Fetching all quizzes
-[2025-12-31 20:37:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:38:57] [INFO] Fetching all quizzes
-[2025-12-31 20:38:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:39:57] [INFO] Fetching all quizzes
-[2025-12-31 20:39:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:40:57] [INFO] Fetching all quizzes
-[2025-12-31 20:40:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:41:57] [INFO] Fetching all quizzes
-[2025-12-31 20:41:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:42:57] [INFO] Fetching all quizzes
-[2025-12-31 20:42:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:43:57] [INFO] Fetching all quizzes
-[2025-12-31 20:43:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:44:57] [INFO] Fetching all quizzes
-[2025-12-31 20:44:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:45:57] [INFO] Fetching all quizzes
-[2025-12-31 20:45:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:46:57] [INFO] Fetching all quizzes
-[2025-12-31 20:46:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:47:57] [INFO] Fetching all quizzes
-[2025-12-31 20:47:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:48:57] [INFO] Fetching all quizzes
-[2025-12-31 20:48:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:49:57] [INFO] Fetching all quizzes
-[2025-12-31 20:49:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:50:57] [INFO] Fetching all quizzes
-[2025-12-31 20:50:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:51:57] [INFO] Fetching all quizzes
-[2025-12-31 20:51:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:52:57] [INFO] Fetching all quizzes
-[2025-12-31 20:52:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:53:57] [INFO] Fetching all quizzes
-[2025-12-31 20:53:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:54:57] [INFO] Fetching all quizzes
-[2025-12-31 20:54:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:55:57] [INFO] Fetching all quizzes
-[2025-12-31 20:55:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:56:57] [INFO] Fetching all quizzes
-[2025-12-31 20:56:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:57:57] [INFO] Fetching all quizzes
-[2025-12-31 20:57:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:58:57] [INFO] Fetching all quizzes
-[2025-12-31 20:58:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 20:59:57] [INFO] Fetching all quizzes
-[2025-12-31 20:59:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:00:57] [INFO] Fetching all quizzes
-[2025-12-31 21:00:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:01:57] [INFO] Fetching all quizzes
-[2025-12-31 21:01:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:02:57] [INFO] Fetching all quizzes
-[2025-12-31 21:02:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:03:57] [INFO] Fetching all quizzes
-[2025-12-31 21:03:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:04:57] [INFO] Fetching all quizzes
-[2025-12-31 21:04:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:05:57] [INFO] Fetching all quizzes
-[2025-12-31 21:05:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:06:57] [INFO] Fetching all quizzes
-[2025-12-31 21:06:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:07:57] [INFO] Fetching all quizzes
-[2025-12-31 21:07:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:08:57] [INFO] Fetching all quizzes
-[2025-12-31 21:08:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:09:57] [INFO] Fetching all quizzes
-[2025-12-31 21:09:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:10:57] [INFO] Fetching all quizzes
-[2025-12-31 21:10:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:11:57] [INFO] Fetching all quizzes
-[2025-12-31 21:11:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:12:57] [INFO] Fetching all quizzes
-[2025-12-31 21:12:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:13:57] [INFO] Fetching all quizzes
-[2025-12-31 21:13:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:14:57] [INFO] Fetching all quizzes
-[2025-12-31 21:14:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:15:57] [INFO] Fetching all quizzes
-[2025-12-31 21:15:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:16:57] [INFO] Fetching all quizzes
-[2025-12-31 21:16:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:17:57] [INFO] Fetching all quizzes
-[2025-12-31 21:17:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:18:57] [INFO] Fetching all quizzes
-[2025-12-31 21:18:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:19:57] [INFO] Fetching all quizzes
-[2025-12-31 21:19:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:20:57] [INFO] Fetching all quizzes
-[2025-12-31 21:20:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:21:57] [INFO] Fetching all quizzes
-[2025-12-31 21:21:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:22:57] [INFO] Fetching all quizzes
-[2025-12-31 21:22:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:23:57] [INFO] Fetching all quizzes
-[2025-12-31 21:23:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:24:57] [INFO] Fetching all quizzes
-[2025-12-31 21:24:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:25:57] [INFO] Fetching all quizzes
-[2025-12-31 21:25:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:26:57] [INFO] Fetching all quizzes
-[2025-12-31 21:26:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:27:57] [INFO] Fetching all quizzes
-[2025-12-31 21:27:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:28:57] [INFO] Fetching all quizzes
-[2025-12-31 21:28:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:29:57] [INFO] Fetching all quizzes
-[2025-12-31 21:29:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:30:57] [INFO] Fetching all quizzes
-[2025-12-31 21:30:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:31:57] [INFO] Fetching all quizzes
-[2025-12-31 21:31:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:32:57] [INFO] Fetching all quizzes
-[2025-12-31 21:32:57] [INFO] The quiz wiht quiz joinCodejava has expired
-[2025-12-31 21:33:57] [INFO] Fetching all quizzes
-[2025-12-31 21:33:57] [INFO] The quiz wiht quiz joinCodejava has expired
+[2026-01-04 22:17:27] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2026-01-04 22:17:27] [INFO] Attempting to add user to quiz: dora
+[2026-01-04 22:17:27] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2026-01-04 22:17:27] [INFO] User added successfully: JUNNU GAMER YT!
+[2026-01-04 22:17:27] [DEBUG] Updating rankings
+[2026-01-04 22:17:27] [INFO] New quiz created and user added. QuizId: dora
+[2026-01-04 22:17:27] [DEBUG] Fetching rankings for quiz: dora
+[2026-01-04 22:17:27] [DEBUG] Fetching leaderboard
+[2026-01-04 22:17:27] [DEBUG] Updating rankings
+[2026-01-04 22:17:27] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2026-01-04 22:17:29] [INFO] User attempting to join quiz with code: dora
+[2026-01-04 22:17:29] [INFO] User attempting to join quiz with code: dora
+[2026-01-04 22:17:29] [DEBUG] Checking if join code exists: dora -> true
+[2026-01-04 22:17:29] [INFO] User denied entry. Quiz not active. Code: dora
+[2026-01-04 22:17:59] [INFO] Generating quiz questions via Gemini
+[2026-01-04 22:17:59] [INFO] Generating quiz questions | topic=guess the pokemon, count=10, difficulty=2
+[2026-01-04 22:17:59] [DEBUG] Preparing prompt for topic: guess the pokemon
+[2026-01-04 22:17:59] [DEBUG] Prompt successfully created
+[2026-01-04 22:17:59] [DEBUG] Prompt generated for Gemini API
+[2026-01-04 22:18:10] [INFO] Received response from Gemini API
+[2026-01-04 22:18:21] [INFO] Creating new quiz
+[2026-01-04 22:18:21] [INFO] Attempting to create new quiz
+[2026-01-04 22:18:21] [DEBUG] Received join code: poke-143
+[2026-01-04 22:18:21] [INFO] Quiz created successfully with join code: poke-143
+[2026-01-04 22:19:26] [INFO] User attempting to join quiz with code: poke-143
+[2026-01-04 22:19:26] [INFO] User attempting to join quiz with code: poke-143
+[2026-01-04 22:19:26] [DEBUG] Checking if join code exists: poke-143 -> true
+[2026-01-04 22:19:26] [INFO] User allowed to join quiz: poke-143
+[2026-01-04 22:19:26] [INFO] Fetching current user progress for: JUNNU GAMER YT!
+[2026-01-04 22:19:26] [DEBUG] User not found for quiz: poke-143
+[2026-01-04 22:19:26] [INFO] User attempting to join quiz: JUNNU GAMER YT!
+[2026-01-04 22:19:26] [INFO] Attempting to add user to quiz: poke-143
+[2026-01-04 22:19:26] [INFO] Attempting to add user: JUNNU GAMER YT!
+[2026-01-04 22:19:26] [INFO] User added successfully: JUNNU GAMER YT!
+[2026-01-04 22:19:26] [DEBUG] Updating rankings
+[2026-01-04 22:19:26] [INFO] New quiz created and user added. QuizId: poke-143
+[2026-01-04 22:19:26] [DEBUG] Fetching rankings for quiz: poke-143
+[2026-01-04 22:19:26] [DEBUG] Fetching leaderboard
+[2026-01-04 22:19:26] [DEBUG] Updating rankings
+[2026-01-04 22:19:26] [INFO] User joined quiz successfully: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [INFO] Validating answer
+[2026-01-04 22:20:06] [DEBUG] Answer check initiated | quizId=12, questionId=36
+[2026-01-04 22:20:06] [INFO] Answer validation result: true
+[2026-01-04 22:20:06] [INFO] Score update received for user: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [INFO] Updating score for user: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [INFO] Updated score for user: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [DEBUG] Updating rankings
+[2026-01-04 22:20:06] [INFO] Score updated for user: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [DEBUG] Fetching rankings for quiz: poke-143
+[2026-01-04 22:20:06] [DEBUG] Fetching leaderboard
+[2026-01-04 22:20:06] [DEBUG] Updating rankings
+[2026-01-04 22:20:06] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [DEBUG] Fetching user: JUNNU GAMER YT!
+[2026-01-04 22:20:06] [INFO] Score updated and broadcasted for user: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [INFO] Validating answer
+[2026-01-04 22:20:14] [DEBUG] Answer check initiated | quizId=12, questionId=37
+[2026-01-04 22:20:14] [INFO] Answer validation result: true
+[2026-01-04 22:20:14] [INFO] Score update received for user: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [INFO] Updating score for user: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [INFO] Updated score for user: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [DEBUG] Updating rankings
+[2026-01-04 22:20:14] [INFO] Score updated for user: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [DEBUG] Fetching rankings for quiz: poke-143
+[2026-01-04 22:20:14] [DEBUG] Fetching leaderboard
+[2026-01-04 22:20:14] [DEBUG] Updating rankings
+[2026-01-04 22:20:14] [DEBUG] Fetching user profile for: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [DEBUG] Fetching user: JUNNU GAMER YT!
+[2026-01-04 22:20:14] [INFO] Score updated and broadcasted for user: JUNNU GAMER YT!
+[2026-01-04 22:21:00] [DEBUG] Fetching rankings for quiz: poke-143
+[2026-01-04 22:21:00] [DEBUG] Fetching leaderboard
+[2026-01-04 22:21:00] [DEBUG] Updating rankings

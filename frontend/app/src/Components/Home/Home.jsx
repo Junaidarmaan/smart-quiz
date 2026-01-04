@@ -32,7 +32,13 @@ export default function Home() {
             onClick={() => navigate("/upcomingQuizzes")}
           >View</button>
         </div>
-
+        <div className='card'>
+          <h2>see rankings</h2>
+          <p>see the results of quizes completed</p>
+          <button
+            onClick={() => navigate("/results")}
+          >View</button>
+        </div>
         
 
       </div>
