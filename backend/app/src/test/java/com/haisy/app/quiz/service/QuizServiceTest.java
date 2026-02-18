@@ -9,7 +9,6 @@ import com.haisy.app.quiz.model.Quiz;
 import com.haisy.app.quiz.model.Schedule;
 import com.haisy.app.quiz.repository.QuestionsRepository;
 import com.haisy.app.quiz.repository.QuizRepo;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,6 +20,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -307,7 +307,7 @@ class QuizServiceTest {
         request.setQuizId(10);
         request.setSelectedOption("B");
 
-        when(questionRepo.findByIdAndQuizQuizId(1, 10)).thenReturn(q);
+        when(questionRepo.findByIdAndQuizQuizId(1, 10)).thenReturn(Optional.of(q));
 
         assertThat(quizService.isCorrect(request)).isTrue();
     }
@@ -323,7 +323,7 @@ class QuizServiceTest {
         request.setQuizId(10);
         request.setSelectedOption("C");
 
-        when(questionRepo.findByIdAndQuizQuizId(2, 10)).thenReturn(q);
+        when(questionRepo.findByIdAndQuizQuizId(2, 10)).thenReturn(Optional.of(q));
 
         assertThat(quizService.isCorrect(request)).isFalse();
     }
@@ -339,8 +339,21 @@ class QuizServiceTest {
         request.setQuizId(10);
         request.setSelectedOption("D");
 
-        when(questionRepo.findByIdAndQuizQuizId(3, 10)).thenReturn(q);
+        when(questionRepo.findByIdAndQuizQuizId(3, 10)).thenReturn(Optional.of(q));
 
         assertThat(quizService.isCorrect(request)).isTrue();
+    }
+
+    @Test
+    @DisplayName("isCorrect: returns false when question ID does not exist (NPE-safe)")
+    void isCorrect_questionNotFound_returnsFalse() {
+        IsCorrectRequest request = new IsCorrectRequest();
+        request.setQuestionId(999);
+        request.setQuizId(999);
+        request.setSelectedOption("A");
+
+        when(questionRepo.findByIdAndQuizQuizId(999, 999)).thenReturn(Optional.empty());
+
+        assertThat(quizService.isCorrect(request)).isFalse();
     }
 }

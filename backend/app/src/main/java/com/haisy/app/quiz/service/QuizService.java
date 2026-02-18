@@ -12,7 +12,6 @@ import com.haisy.app.common.dto.ApiResponse;
 import com.haisy.app.quiz.dto.IsCorrectRequest;
 import com.haisy.app.quiz.dto.QuizRequestDTO;
 import com.haisy.app.quiz.mapper.QuizDtoMapper;
-import com.haisy.app.quiz.model.Question;
 import com.haisy.app.quiz.model.Quiz;
 import com.haisy.app.quiz.repository.QuestionsRepository;
 import com.haisy.app.quiz.repository.QuizRepo;
@@ -94,10 +93,9 @@ public class QuizService {
     }
 
     public boolean isCorrect(IsCorrectRequest request) {
-        Question q = questionRepo.findByIdAndQuizQuizId(
-                request.getQuestionId(),
-                request.getQuizId()
-        );
-        return q.getCorrectOption().equals(request.getSelectedOption());
+        return questionRepo
+                .findByIdAndQuizQuizId(request.getQuestionId(), request.getQuizId())
+                .map(q -> q.getCorrectOption().equals(request.getSelectedOption()))
+                .orElse(false);
     }
 }
