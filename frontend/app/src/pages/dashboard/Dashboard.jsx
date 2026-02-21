@@ -1,4 +1,4 @@
-import './Home.css'
+import './Dashboard.css'
 import { useNavigate } from 'react-router-dom';
 
 

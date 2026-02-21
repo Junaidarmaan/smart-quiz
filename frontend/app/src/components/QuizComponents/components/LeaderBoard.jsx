@@ -8,7 +8,6 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
-import quizBG from "./assets/quizBG.jpg"; // adjust path if needed
 
 
 export default function LeaderBoard({ rankings, currentUserName }) {
@@ -21,11 +20,8 @@ export default function LeaderBoard({ rankings, currentUserName }) {
       minHeight="100vh"
       width="100%"
       sx={{
-        backgroundImage: `url(${quizBG})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        position: "relative"
+        
+        backgroundColor : "background.default"
       }}
     >
       {/* Overlay */}
@@ -33,7 +29,7 @@ export default function LeaderBoard({ rankings, currentUserName }) {
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "rgba(0,0,0,0.45)"
+          backgroundColor: "background.paper"
         }}
       />
 

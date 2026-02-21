@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import { TableContainer, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
-import './LoaderAnimation.css'
+import '../styles/LoaderAnimation.css'
 
 
 

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { useParams, useNavigate } from "react-router-dom";
 
-import Question from "./Question";
-import LeaderBoard from "./LeaderBoard";
-import Live from "./Live";
+import Question from "../components/Question";
+import LeaderBoard from "../components/LeaderBoard";
+import Live from "../assets/Live";
 
 export default function PlayQuiz() {
   const { code } = useParams();

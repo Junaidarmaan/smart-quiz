@@ -9,8 +9,7 @@ import {
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 
-import Live from "./Live";
-import quizBG from "./assets/quizBG.jpg"; // adjust path if needed
+import Live from "../assets/Live";
 
 export default function Question({
   data,
@@ -61,10 +60,7 @@ export default function Question({
         justifyContent="center"
         alignItems="center"
         sx={{
-          backgroundImage: `url(${quizBG})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
+          
         }}
       >
         <Box
@@ -88,10 +84,7 @@ export default function Question({
       minHeight="100vh"
       width="100%"
       sx={{
-        backgroundImage: `url(${quizBG})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundColor : "background.default",
         display: "flex",
         justifyContent: "center",
         padding: 2
