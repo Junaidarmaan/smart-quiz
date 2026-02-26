@@ -126,7 +126,7 @@ export default function Login() {
           emotion: "happy"
         });
         setTimeout(() => {
-          navigate("/dashboard");
+          navigate("/home");
           hideTeddy();
         }, 1500);
       } else {
@@ -163,7 +163,7 @@ export default function Login() {
     return null;
   }
   if (isAuthenticated) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/home" replace />;
 
   }
 
@@ -184,9 +184,9 @@ export default function Login() {
         message: res.data.message || "successfully verified your credentials",
         emotion: "happy"
       })
-      login(res.data.token)
+      login(res.data.token,res.data.username)
       setTimeout(() => {
-        navigate("/dashboard")
+        navigate("/home")
 
         hideTeddy()
       }, 1500) // Give user time to see the success message

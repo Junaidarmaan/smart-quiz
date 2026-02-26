@@ -1,5 +1,6 @@
 export const STORAGE_KEYS = {
   TOKEN: "token",
+  USER: "username",
 };
 
 export const API = {

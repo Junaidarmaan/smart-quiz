@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import storage from "../utils/storage";
-
+import { tokenStorage } from "../utils/storage";
+import { profileStore } from "../utils/storage";
 // 1️⃣ Create context
 const AuthContext = createContext(null);
 
@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
   // 3️⃣ On app load, hydrate auth state from localStorage
   useEffect(() => {
-    const storedToken = storage.get();
+    const storedToken = tokenStorage.get();
 
     if (storedToken) {
       setToken(storedToken);
@@ -23,15 +23,16 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   // 4️⃣ Login handler
-  const login = (jwtToken) => {
-    storage.set(jwtToken);
+  const login = (jwtToken,username) => {
+    tokenStorage.set(jwtToken);
+    profileStore.set(username)
     setToken(jwtToken);
     setIsAuthenticated(true);
   };
 
   // 5️⃣ Logout handler
   const logout = () => {
-    storage.remove();
+    tokenStorage.remove();
     setToken(null);
     setIsAuthenticated(false);
   };

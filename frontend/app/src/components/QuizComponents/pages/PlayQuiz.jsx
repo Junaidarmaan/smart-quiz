@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { useParams, useNavigate } from "react-router-dom";
-
 import Question from "../components/Question";
 import LeaderBoard from "../components/LeaderBoard";
 import Live from "../assets/Live";
-
+import { profileStore } from "../../../utils/storage";
 export default function PlayQuiz() {
   const { code } = useParams();
   const navigate = useNavigate();
@@ -66,7 +65,7 @@ export default function PlayQuiz() {
 
     const url = `http://localhost:8080/getCurrentQuestion`;
     const reqData = {
-      userName: sessionStorage.getItem("userName"),
+      userName: profileStore.get(),
       quizId: sessionStorage.getItem("quizId")
     };
 
@@ -99,7 +98,7 @@ export default function PlayQuiz() {
       );
 
       const profile = {
-        userName: sessionStorage.getItem("userName"),
+        userName: profileStore.get(),
         quizId: code,
         score: 0
       };

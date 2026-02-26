@@ -11,4 +11,14 @@ import { STORAGE_KEYS } from "../config/constants";
     localStorage.removeItem(STORAGE_KEYS.TOKEN);
   },
 };
-export default tokenStorage;
+export const profileStore = {
+  get(){
+    return localStorage.getItem(STORAGE_KEYS.USER);
+  },
+  set(username){
+    localStorage.setItem(STORAGE_KEYS.USER,username);
+  },
+  remove(){
+    localStorage.removeItem(STORAGE_KEYS.USER);
+  }
+}

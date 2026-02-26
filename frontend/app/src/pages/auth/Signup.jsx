@@ -187,6 +187,7 @@ export default function Signup() {
       if(res.data.success){
         setTeddyMood("happy");
         setTeddyText("Creating account… ✅");
+        localStorage.setItem("userName",res.data.username);
         navigate("/login");
       }
 
