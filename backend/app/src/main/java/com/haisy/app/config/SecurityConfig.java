@@ -16,21 +16,16 @@ import com.haisy.app.auth.jwt.JwtAuthenticationFilter;
 
 @Configuration
 public class SecurityConfig {
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
         http
+                .cors(cors -> cors.configurationSource(corsConfigurationSource())) 
                 .csrf(csrf -> csrf.disable())
-
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
                         .anyRequest().permitAll())
-
                 .httpBasic(Customizer.withDefaults())
                 .formLogin(form -> form.disable())
-
-                // 🔐 Add JWT filter BEFORE Spring's auth filter
                 .addFilterBefore(
                         new JwtAuthenticationFilter(),
                         UsernamePasswordAuthenticationFilter.class);

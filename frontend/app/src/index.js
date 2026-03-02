@@ -12,15 +12,16 @@ import { AuthProvider } from "./context/AuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <TeddyProvider>
-      <AuthProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <TeddyAssistant />
-          <App />
-        </ThemeProvider>
-      </AuthProvider>
-    </TeddyProvider>
-  </BrowserRouter>
+  // ✅ correct order
+<BrowserRouter>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <AuthProvider>
+      <TeddyProvider>
+        <TeddyAssistant />
+        <App />
+      </TeddyProvider>
+    </AuthProvider>
+  </ThemeProvider>
+</BrowserRouter>
 );

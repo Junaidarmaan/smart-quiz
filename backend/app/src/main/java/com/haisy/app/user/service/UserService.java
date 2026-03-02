@@ -1,5 +1,6 @@
 package com.haisy.app.user.service;
 
+import com.haisy.app.auth.dto.SignupRequest;
 import com.haisy.app.user.entity.Role;
 import com.haisy.app.user.entity.User;
 import com.haisy.app.user.repository.UserRepository;
@@ -17,7 +18,10 @@ public class UserService {
     }
 
     // 🔹 Register new user
-    public User register(String email, String userName, String password) {
+    public User register(SignupRequest request) {
+        String email = request.getEmail();
+        String userName = request.getUserName();
+        String password = request.getPassword();
 
         if (userRepository.existsByEmail(email)) {
             throw new RuntimeException("Email already registered");

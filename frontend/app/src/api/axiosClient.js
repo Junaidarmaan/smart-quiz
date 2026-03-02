@@ -32,7 +32,7 @@ axiosClient.interceptors.response.use(
     if (error?.response?.status === 401) {
       tokenStorage.remove();
       // optional: you can redirect to login later
-      // window.location.href = "/login";
+      window.location.href = "/login";
     }
 
     return Promise.reject(error);

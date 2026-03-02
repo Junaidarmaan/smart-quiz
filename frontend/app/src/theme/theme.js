@@ -119,7 +119,7 @@ const THEMES = {
  * - "roseDark"
  * - "oceanDark"
  */
-const ACTIVE_THEME = "emeraldDark";
+const ACTIVE_THEME = "oceanDark";
 
 /**
  * ===============================

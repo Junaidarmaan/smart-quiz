@@ -1,6 +1,6 @@
 import axiosClient from "./axiosClient";
 
-export const authApi = {
+const authApi = {
   login(data) {
     return axiosClient.post("/auth/login", data);
   },
@@ -8,11 +8,6 @@ export const authApi = {
   signup(data) {
     return axiosClient.post("/auth/signup", data);
   },
-
-  verifyGoogleToken(idToken) {
-    return axiosClient.post("/verifyToken", { idToken });
-  },
 };
 
 export default authApi;
-
