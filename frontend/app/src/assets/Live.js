@@ -49,6 +49,7 @@ function send(destination, payload) {
     console.error("STOMP not connected. Cannot send.");
     return;
   }
+  console.log("sent " + JSON.stringify(payload) + " to " + destination);
 
   stompClient.publish({
     destination,
