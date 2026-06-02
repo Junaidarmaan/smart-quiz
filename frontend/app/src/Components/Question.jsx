@@ -35,6 +35,10 @@ export default function Question({
 
     if (res === true) {
       setResult("correct");
+      const userName = sessionStorage.getItem("userName");
+      const quizId = sessionStorage.getItem("quizId");
+
+      console.log("updateScore payload:", { userName, quizId }); // check this
 
       // 🔥 SCORE UPDATE (same as your previous logic)
       Live.send("/app/updateScore", {

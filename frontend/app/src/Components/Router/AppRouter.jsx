@@ -17,7 +17,7 @@ export default function AppRouter({data})
   return (
     <Routes>
         <Route path='/signup' element={<Auth data={data}/>}/>
-        <Route path='/' element={<Login/>}/>
+        <Route path='/' element={<Home/>}/>
 
         <Route path='/home' element={<Home/>}/>
         <Route path='/createQuiz' element={<CreateQuiz/>}/>

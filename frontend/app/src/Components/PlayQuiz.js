@@ -113,13 +113,13 @@ export default function PlayQuiz() {
 
     Live.connect(() => {
       Live.subscribe(`/topic/quiz/rankings/${code}`, (msg) => {
-        setRankings(msg.body);
+        setRankings(msg);
       });
 
       Live.subscribe(
         `/topic/quiz/scoreUpdates/${sessionStorage.getItem("userName")}`,
         (msg) => {
-          setScore(msg.body.score);
+          setScore(msg.score);
         }
       );
 
